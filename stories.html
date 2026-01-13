@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories of Change | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .story-section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .story-section:last-child {
+            border-bottom: none;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .story-grid {
+                grid-template-columns: 1fr 1.2fr;
+            }
+
+            .story-section.alternate .story-grid {
+                direction: rtl;
+            }
+
+            .story-section.alternate .story-text {
+                direction: ltr;
+            }
+        }
+
+        .story-img-container {
+            position: relative;
+        }
+
+        .story-img-container img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 5px solid white;
+        }
+
+        .story-img-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--primary-light);
+            opacity: 0.2;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .story-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .story-text h3 {
+            font-size: 1.2rem;
+            color: var(--accent-pink);
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .story-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .quote-block {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--primary-main);
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .quote-block i {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            color: rgba(107, 70, 193, 0.1);
+        }
+
+        .quote-block p {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html" class="active">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <img src="advayapictures/DSC06868.JPG" class="page-header-bg" alt="Stories of Change">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Stories of Change</h1>
+            <p>Faces of resilience, learning, and transformed lives at Advaya.</p>
+        </div>
+    </section>
+
+    <!-- STORIES CONTENT -->
+    <section class="content-section">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>Shining Stars</h2>
+                <p>Every child has a unique journey. Here are a few stories of how education and care have paved a new
+                    path for our children.</p>
+            </div>
+
+            <!-- Suman -->
+            <div class="story-section">
+                <div class="story-grid">
+                    <div class="story-img-container">
+                        <img src="advayapictures/DSC06916.JPG" alt="Suman">
+                    </div>
+                    <div class="story-text">
+                        <h3>Suman's Journey</h3>
+                        <h2>A New Beginning Through Education</h2>
+                        <p>Suman, a young boy from Nepal, studied there until the 4th standard. But when the COVID-19
+                            pandemic struck, everything came to a standstill — especially education. For nearly three
+                            years, schools remained closed, and admissions were paused. Like many children during that
+                            time, Suman’s learning came to an unexpected halt.</p>
+                        <p>At around 12 years old, Suman moved to India and began living with relatives. In a new
+                            country with an unfamiliar system, he was lost and unsure how to continue his education. One
+                            day, the team at Advaya introduced him to the center. Suman quietly observed others studying
+                            and admitted, "I didn’t even know how to read mobile numbers at that time."</p>
+                        <p>Over time, Advaya helped him find a way back into education. Since a regular school wasn't
+                            possible due to his age gap, he was guided to join NIOS (National Institute of Open
+                            Schooling). Recently, Suman successfully completed his 10th exam through NIOS.</p>
+                        <div class="quote-block">
+                            <i class="fas fa-quote-right"></i>
+                            <p>"The fact that I can write this myself today is only because of Advaya. If Advaya wasn’t
+                                there, I might have ended up working in a hotel or doing odd jobs."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sanjeetha -->
+            <div class="story-section alternate">
+                <div class="story-grid">
+                    <div class="story-img-container">
+                        <img src="advayapictures/DSC06947.JPG" alt="Sanjeetha">
+                    </div>
+                    <div class="story-text">
+                        <h3>Sanjeetha</h3>
+                        <h2>"The Know-it-all"</h2>
+                        <p>Sanjeetha is an 11-year-old girl who is always chirpy, fun-loving, and a ray of sunshine from
+                            Nepal. She is also very optimistic and wants to become a teacher when she grows up. She
+                            excels in mathematics, English, and Kannada along with traditional subjects she loves to
+                            sing, dance, and draw.</p>
+                        <p>Moving from Nepal to Andhra Pradesh, she couldn't avail of any schooling there. It was when
+                            she moved to Bengaluru with her parents and 3 siblings that Advaya became her first school.
+                            "I used to never go out of my house when I was there," she says, remembering her days before
+                            Advaya.</p>
+                        <p>As she navigates her way in this vibrant city, Advaya has helped provide her with the
+                            education she had missed out on. "Advaya is my first school and I love coming to school and
+                            meeting my friends," she says with a big smile.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nagashree -->
+            <div class="story-section">
+                <div class="story-grid">
+                    <div class="story-img-container">
+                        <img src="advayapictures/DSC07141.JPG" alt="Nagashree">
+                    </div>
+                    <div class="story-text">
+                        <h3>Nagashree</h3>
+                        <h2>A Voice Found, A Future Reclaimed</h2>
+                        <p>Nagashree, a 19-year-old girl from the Hallehalli-Kithaganur slum in Bengaluru, lives with
+                            her parents and younger brothers in a small blue tarpaulin house. Her family migrated to the
+                            city after repeated crop failures and poor rainfall pushed them into deep debt. "We had no
+                            choice but to leave everything behind... it was survival."</p>
+                        <p>City life brought new challenges: poor sanitation, irregular income, and a community where
+                            alcoholism was widespread. Girls were often denied education. "In my village, dowry was
+                            common," she says. "I knew I wanted a different life." Determined to study, Nagashree topped
+                            her 10th standard exams with 86% and received ₹10,000 for her achievement.</p>
+                        <p>"Advaya gave me confidence," she says. "I finally felt heard, seen, and believed in. They
+                            helped me see my own worth." Now attending life skill sessions and pursuing 2nd PUC,
+                            Nagashree also receives daily nutritious meals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gajendra -->
+            <div class="story-section alternate">
+                <div class="story-grid">
+                    <div class="story-img-container">
+                        <img src="advayapictures/DSC06888.JPG" alt="Gajendra">
+                    </div>
+                    <div class="story-text">
+                        <h3>Gajendra</h3>
+                        <h2>"The Favourite One"</h2>
+                        <p>Gajendra is a bright and determined student studying in 8th Standard. Born in a small village
+                            where education was never seen as important, his family survived on farming until irregular
+                            rainfall and poor soil made it unsustainable. They moved to Bangalore hoping for a better
+                            life, but his parents ended up as daily wage labourers struggling to provide even one proper
+                            meal.</p>
+                        <p>When he was introduced to Advaya in 3rd Standard, he struggled with reading and writing basic
+                            English words. With the help of his teachers, spoken English classes, and continuous
+                            encouragement, Gajendra's skills gradually improved. Today, he can read fluently, write
+                            clearly, and speak confidently in English.</p>
+                        <p>Gajendra proudly assists the founder while preparing breakfast for all the children. "I am
+                            proud to be part of the change. I want to break these barriers and prove that girls can
+                            lead, succeed, and take charge of their own lives," says Gajendra dreaming of challenging
+                            harmful traditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khushbu -->
+            <div class="story-section">
+                <div class="story-grid">
+                    <div class="story-img-container">
+                        <img src="advayapictures/DSC07046.JPG" alt="Khushbu">
+                    </div>
+                    <div class="story-text">
+                        <h3>Khushbu's Journey</h3>
+                        <h2>From Fear to Confidence</h2>
+                        <p>Khushbu, a 6th standard student at Government School, Kithaganur, comes from a village in
+                            Bihar where girls' education is often ignored. She witnessed harmful traditions that are
+                            still followed, like early child marriage and girls being kept away from schools. "I never
+                            liked that environment. It made me feel scared and helpless," Khushbu shares.</p>
+                        <p>Due to financial struggles, her family moved to Bangalore, hoping for a better future. Her
+                            life changed when she joined Advaya, a learning center where children receive academic
+                            support along with life skills. Once shy and quiet, Khushbu now speaks confidently,
+                            participates in activities, and has learned about discipline, cleanliness, and self-care.
+                        </p>
+                        <div class="quote-block">
+                            <i class="fas fa-quote-right"></i>
+                            <p>"I strongly believe girls' independence is very important. I want to prove that girls can
+                                do anything when given the right support. I dream of becoming a role model — someone who
+                                proves that, with the right support, girls can rise, grow, and lead."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="impact-section" style="margin-top:0;">
+        <div class="hero-overlay" style="z-index: 0; background: var(--impact-gradient);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="impact-header">
+                <h2>Be Part of Their Story</h2>
+                <p>Your support can help more children like Suman and Nagashree rewrite their futures.</p>
+            </div>
+            <a href="donate.html" class="hero-btn" style="background:var(--primary-main); color:white;">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Advaya Trust</h3>
+                <p>Empowering communities, one life at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>info@advayatrust.org</p>
+                <p>Mumbai, India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founder's Note | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .founders-note-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .note-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .note-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .note-header h1 {
+            font-size: 3rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .note-content {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+
+        .note-content p {
+            margin-bottom: 25px;
+        }
+
+        .founders-bio {
+            margin-top: 60px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: var(--bg-body);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border-left: 8px solid var(--primary-main);
+        }
+
+        .founders-img-wrapper {
+            flex-shrink: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .founders-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Focus on the faces from the larger image */
+            object-position: center bottom;
+        }
+
+        .founders-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .founders-info p {
+            font-style: italic;
+            color: var(--primary-main);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .founders-info small {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .founders-bio {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .founders-img-wrapper {
+                width: 100%;
+                height: 250px;
+            }
+
+            .note-content {
+                text-align: left;
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <img src="advayapictures/founders_note.jpg" class="page-header-bg" alt="Advaya Founders">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Note from Founders</h1>
+            <p>The vision and commitment behind Advaya Education & Charitable Trust.</p>
+        </div>
+    </section>
+
+    <!-- NOTE CONTENT -->
+    <section class="founders-note-section">
+        <div class="container note-container">
+            <div class="note-content">
+                <p><strong>Advaya Educational and Charitable Trust</strong> was born out of a simple yet powerful dream
+                    — to stand by children who are often left unseen and unheard in our society. What began as an
+                    informal effort with just four children in 2020 has grown into a committed movement to provide
+                    education, nutrition, and dignity to hundreds of migrant and underprivileged children in Bengaluru.
+                    The journey of the past five years — from 2020 to 2025 — has been one of both immense learning and
+                    growth, shaped by the challenges we have faced and the incredible resilience of the children and
+                    families we work with.</p>
+
+                <p>This Annual Report is our humble attempt to share this journey with you — to show not just what we
+                    did, but why we did it, and how it is changing lives.</p>
+
+                <p>One of our earliest milestones was setting up daily education support classes and providing
+                    nutritious meals to children from migrant worker families living in temporary, makeshift shelters.
+                    The pandemic years tested us severely, but community solidarity and the generosity of individuals
+                    and partners kept us going.</p>
+
+                <p>Over these years, more than 535 children have been part of Advaya's programs, with many being
+                    enrolled into schools for the first time in their lives. Our work has not stopped at education
+                    alone. Understanding that a hungry child cannot study, we have provided over 100,000 nutritious
+                    meals to children who otherwise might have gone to bed hungry. With the support of partners and
+                    donors, we have also brought joy and play into children's lives by installing recreational spaces
+                    and providing learning materials.</p>
+
+                <p>Advaya has also been part of important collaborations with other nonprofits, community organizations,
+                    and local leaders. Together, we have conducted health camps, awareness drives, and emergency relief
+                    programs for families in need. Throughout this period, we have kept one question close to our
+                    hearts: <em>Is this action truly making life better for this child, this family, this
+                        community?</em></p>
+
+                <p>It is this question that guides every decision we take, inspired by the belief that even the smallest
+                    intervention can spark lasting change.</p>
+
+                <p>Today, Advaya is a growing family of dedicated team members, volunteers, donors, and well-wishers who
+                    share a commitment to building a more just and compassionate society. The challenges ahead are many
+                    — migration, poverty, access to basic services — but we move forward with faith in the inherent
+                    goodness of people and the power of collective action.</p>
+
+                <p>As we look to the future, we warmly invite everyone — individuals, corporates, institutions — to walk
+                    with us. The children we serve deserve nothing less than our full attention, commitment, and care.
+                    Advaya belongs to the community, and it belongs to all of us. Together, we can build a world where
+                    every child learns, grows, and dreams freely.</p>
+            </div>
+
+            <div class="founders-bio">
+                <div class="founders-img-wrapper">
+                    <img src="advayapictures/founders_note.jpg" alt="Nandini G & Murali R">
+                </div>
+                <div class="founders-info">
+                    <p>With gratitude and hope,</p>
+                    <h3>Nandini G & Murali R</h3>
+                    <p>Founders of Advaya</p>
+                    <small>Advaya Educational and Charitable Trust</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Advaya Trust</h3>
+                <p>Empowering communities, one life at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>info@advayatrust.org</p>
+                <p>Mumbai, India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

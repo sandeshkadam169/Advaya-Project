@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Support Programme | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .edu-content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 992px) {
+            .edu-content-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .program-points {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .program-points li {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .program-points i {
+            color: var(--accent-pink);
+            margin-top: 5px;
+        }
+
+        .impact-snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        @media (min-width: 992px) {
+            .impact-snapshot-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .snapshot-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+            border: 1px solid rgba(107, 70, 193, 0.1);
+        }
+
+        .snapshot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .snapshot-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            background: var(--bg-body);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--primary-main);
+        }
+
+        .snapshot-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .snapshot-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .program-section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .program-section:last-child {
+            border-bottom: none;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .program-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .program-section.alternate .program-grid {
+                direction: rtl;
+            }
+
+            .program-section.alternate .program-text {
+                direction: ltr;
+            }
+        }
+
+        .program-img-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .program-img-grid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .program-text h3 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .program-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .stat-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--bg-body);
+            color: var(--primary-main);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            border: 1px solid rgba(107, 70, 193, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html" class="active">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <img src="advayapictures/DSC06869.JPG" class="page-header-bg" alt="Education Support">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Education Support Programme</h1>
+            <p>Bridging the gap for every child's right to learn and grow.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="content-section">
+        <div class="container">
+            <div class="edu-content-grid">
+                <div class="edu-text">
+                    <h2 style="color: var(--primary-dark); font-weight: 800; font-size: 2.5rem; margin-bottom: 20px;">
+                        Shaping Futures</h2>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">Education plays a
+                        transformative role in shaping individuals, families, and communities. However, for children
+                        living in makeshift settlements and on construction sites, access to education remains a distant
+                        dream. Despite the Right of Children to Free and Compulsory Education (RTE) Act, 2009, which
+                        guarantees free and compulsory education for children aged 6-14, migrant children continue to be
+                        excluded due to practical challenges.</p>
+
+                    <p style="font-weight: 600; color: var(--primary-main); font-size: 1.2rem;">Their education is
+                        disrupted due to:</p>
+                    <ul class="program-points">
+                        <li><i class="fas fa-check-circle"></i> Frequent migration, often mid-academic year.</li>
+                        <li><i class="fas fa-check-circle"></i> Language barriers, particularly for inter-state
+                            migrants.</li>
+                        <li><i class="fas fa-check-circle"></i> Short-term residence, ranging from three to six months
+                            at a location.</li>
+                        <li><i class="fas fa-check-circle"></i> Mismatch between school calendars and migration
+                            patterns.</li>
+                        <li><i class="fas fa-check-circle"></i> Issues relating to improper documents.</li>
+                    </ul>
+
+                    <p style="margin-bottom: 20px; line-height: 1.8;">At Advaya Educational and Charitable Trust, we
+                        firmly believe that education is the most powerful tool to break this cycle of poverty. The lack
+                        of access to education among migrant children is a violation of their fundamental right and
+                        severely impacts their future opportunities. Through our various education support programmes,
+                        we strive to reach out to the most marginalised children of India and enable their access to
+                        education, health and protection.</p>
+
+                    <p style="line-height: 1.8;">Along with quality education, we also facilitate sessions on basic
+                        education, alternative and values education, life skills and life goals, child rights, the
+                        effects of drug abuse, protection from sexual abuse, primary health care and nutrition. We
+                        provide children with school starter kits, which include uniforms, books, school bags, and other
+                        materials they may need to start their journey into education.</p>
+                </div>
+                <div class="edu-image">
+                    <img src="advayapictures/DSC06902.JPG" alt="Children Learning"
+                        style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                    <div
+                        style="margin-top: 30px; background: white; padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-left: 5px solid var(--primary-main);">
+                        <p style="font-style: italic; color: var(--text-muted);">"The overarching goal is to ensure
+                            freedom for children from begging and that they are gradually weaned away from traffic
+                            signals and the mainstream in education."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Deep Dives -->
+            <div class="program-sections-wrapper" style="margin-top: 80px;">
+                <div class="section-header">
+                    <h2>Our Specialized Initiatives</h2>
+                    <p>Tailored programs addressing the unique challenges of migrant communities at every stage.</p>
+                </div>
+
+                <!-- Day Care Center -->
+                <div class="program-section">
+                    <div class="program-grid">
+                        <div class="program-text">
+                            <h3>Day Care Center</h3>
+                            <p>Advaya initiated the Day Care Programme primarily to support elder siblings who were
+                                burdened with the responsibility of caring for their younger brothers and sisters. In
+                                many of the families we serve, there is little awareness or capacity for family
+                                planning, and it is common to find households with four to five children.</p>
+                            <p>As a result, the older children are often expected to take on adult
+                                responsibilities—cooking, cleaning, and babysitting—at the cost of their own education.
+                                This intervention not only provides a safe and nurturing space for the younger children
+                                but also enables the elder siblings to attend school regularly without the fear of being
+                                pulled out for caregiving duties.</p>
+                            <p>The program ensures that both age groups have access to learning and development, thereby
+                                preventing school dropouts and supporting the holistic growth of the entire family.
+                                Designed for children aged 3-6 years, the program provides a nurturing environment where
+                                children can develop their cognitive, physical, social, and emotional skills.</p>
+                        </div>
+                        <div class="program-img-grid">
+                            <img src="advayapictures/DSC07133.JPG" alt="Day Care 1">
+                            <img src="advayapictures/DSC06848.JPG" alt="Day Care 2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advaya Bridging Programme -->
+                <div class="program-section alternate">
+                    <div class="program-grid">
+                        <div class="program-text">
+                            <h3>Advaya Bridging Programme</h3>
+                            <p>The Bridge School Program at Advaya offers a vital second chance to children between the
+                                ages of 6 to 14 who have either dropped out or never enrolled in school. Many of these
+                                children face challenges such as language barriers, lack of documents, parental fear or
+                                hesitation, caregiving responsibilities for younger siblings, and seasonal migration—all
+                                of which keep them away from formal education.</p>
+                            <p>To bridge this gap, we provide focused learning in core subjects like mathematics,
+                                science, languages, and social studies, along with personal and social development
+                                support. Learning is made joyful and engaging through activity-based methods, play,
+                                music, storytelling, and art, helping children develop a love for learning.</p>
+                            <p>We also provide nutritious meals every day, ensuring that no child studies on an empty
+                                stomach. Our team works closely with families, offers emotional encouragement, and
+                                supports children with the documentation and confidence needed to enter formal schools.
+                                The Bridge School becomes not just a classroom—but a doorway to a brighter, healthier,
+                                and more dignified future.</p>
+                        </div>
+                        <div class="program-img-grid">
+                            <img src="advayapictures/DSC07056.JPG" alt="Bridge 1">
+                            <img src="advayapictures/DSC06969.JPG" alt="Bridge 2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advaya Evening Study Centre -->
+                <div class="program-section">
+                    <div class="program-grid">
+                        <div class="program-text">
+                            <h3>Advaya Evening Study Centre</h3>
+                            <p>The Advaya Evening Study Centre is a vital initiative that supports children who have
+                                transitioned from the Bridge School program into formal schools. These children, often
+                                the first in their families to attend school, face challenges in keeping up with
+                                classroom expectations due to gaps in foundational learning, lack of support at home, or
+                                language difficulties.</p>
+                            <p>The Evening Study Centre provides a safe, structured, and encouraging environment where
+                                children receive individual attention, help with homework, concept clarification, and
+                                exam preparation. Learning is supported through interactive methods, regular
+                                assessments, and mentoring, which boost academic performance and confidence.</p>
+                            <p>Many of these children come from homes where parents are unable to assist with studies
+                                due to work pressures or lack of education. The Study Centre helps bridge this gap,
+                                ensuring that children don't fall behind or drop out after school admission.</p>
+                            <div class="stat-badge">Currently 71 Students Enrolled</div>
+                            <div class="stat-badge">35+ Admitted to Schools Post-Bridge</div>
+                        </div>
+                        <div class="program-img-grid">
+                            <img src="advayapictures/DSC06932 (1).JPG" alt="Evening Study 1">
+                            <img src="advayapictures/DSC06867.JPG" alt="Evening Study 2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advaya Mobile School -->
+                <div class="program-section alternate">
+                    <div class="program-grid">
+                        <div class="program-text">
+                            <h3>Advaya Mobile School</h3>
+                            <p>The Advaya Mobile School initiative was launched to bring education directly to children
+                                living in remote slum settlements and makeshift tent communities—areas where formal
+                                schooling is often out of reach. These children, many of whom are first-generation
+                                learners, face barriers such as migration, lack of documentation, and unstable living
+                                conditions, which prevent them from attending regular schools.</p>
+                            <p>Recognizing this critical gap, Advaya designed the mobile school to reach children at
+                                their doorstep, making education accessible, inclusive, and relevant to their
+                                circumstances. Covering three slum clusters across Bangalore, the mobile school operates
+                                by setting up temporary classrooms in open spaces or community shelters, using creative
+                                teaching aids and learning materials.</p>
+                            <p>Children are grouped based on learning levels rather than age, allowing for personalized
+                                instruction and meaningful progress. In addition to academic learning, the sessions
+                                incorporate health, hygiene, and life skills education to ensure holistic development.
+                                Over the years, 95 children from three slums were part of this initiative.</p>
+                            <div class="stat-badge">95 Children Reached</div>
+                            <div class="stat-badge">Operating in 3 Slum Clusters</div>
+                            <div style="margin-top: 20px;">
+                                <a href="mobile-school.html" class="hero-btn"
+                                    style="padding: 10px 25px; font-size: 0.9rem;">Learn More About Mobile School</a>
+                            </div>
+                        </div>
+                        <div class="program-img-grid">
+                            <img src="advayapictures/DSC06862.JPG" alt="Mobile School 1">
+                            <img src="advayapictures/DSC06916.JPG" alt="Mobile School 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMPACT SNAPSHOT -->
+            <div class="section-header" style="margin-top: 100px;">
+                <h2>Impact Snapshot</h2>
+                <p>A glimpse into the transformation we are driving every day.</p>
+            </div>
+
+            <div class="impact-snapshot-grid">
+                <!-- 1 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-user-graduate"></i></div>
+                    <span class="snapshot-number">535</span>
+                    <p class="snapshot-desc">Children supported with school admission, tuition, and educational
+                        materials over the years</p>
+                </div>
+                <!-- 2 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-bridge"></i></div>
+                    <span class="snapshot-number">300</span>
+                    <p class="snapshot-desc">Children were bridged and admitted to various schools with support of
+                        Advaya.</p>
+                </div>
+                <!-- 3 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-box-open"></i></div>
+                    <span class="snapshot-number">6000+</span>
+                    <p class="snapshot-desc">Educational Kit Distributed</p>
+                </div>
+                <!-- 4 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-female"></i></div>
+                    <span class="snapshot-number">320+</span>
+                    <p class="snapshot-desc">Girls empowered through education programs, personal care kits, and skill
+                        support.</p>
+                </div>
+                <!-- 5 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <span class="snapshot-number">121</span>
+                    <p class="snapshot-desc">Children currently enrolled and regularly attending classes under Advaya's
+                        education program.</p>
+                </div>
+                <!-- 6 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-star"></i></div>
+                    <span class="snapshot-number">4</span>
+                    <p class="snapshot-desc">Special children were supported with personalised care and inclusive
+                        educational support</p>
+                </div>
+                <!-- 7 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-book-reader"></i></div>
+                    <span class="snapshot-number">90+</span>
+                    <p class="snapshot-desc">Receiving remedial classes for foundational learning recovery</p>
+                </div>
+                <!-- 8 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-users"></i></div>
+                    <span class="snapshot-number">200+</span>
+                    <p class="snapshot-desc">Parents engaged through awareness drives and meetings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="impact-section" style="margin-top:0;">
+        <div class="hero-overlay" style="z-index: 0; background: var(--impact-gradient);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="impact-header">
+                <h2>Help Us Reach More Children</h2>
+                <p>Every contribution helps a child find their way back to school.</p>
+            </div>
+            <a href="donate.html" class="hero-btn" style="background:var(--primary-main); color:white;">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Advaya Trust</h3>
+                <p>Empowering communities, one life at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>info@advayatrust.org</p>
+                <p>Mumbai, India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

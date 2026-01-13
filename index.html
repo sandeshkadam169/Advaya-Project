@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advaya Education & Charitable Trust</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html">
+          <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+          <div class="logo-text">
+            <span>Advaya</span>
+            <small>Educational and Charitable Trust</small>
+          </div>
+        </a>
+      </div>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="getinvolved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="advayapictures/DSC07071.JPG" alt="Hero" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Bridging Educational <br> Gaps</h1>
+      <p>Providing quality education, nutrition, and healthcare since 2020</p>
+      <a href="donate.html" class="hero-btn">Support Us <i class="fas fa-arrow-right"></i></a>
+
+      <div class="carousel-indicators">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION (from Image 1) -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h2><span class="count-up" data-target="535">0</span>+</h2>
+          <p>Children Impacted</p>
+        </div>
+        <div class="stat-item">
+          <h2><span class="count-up" data-target="300">0</span>+</h2>
+          <p>Bridged to Schools</p>
+        </div>
+        <div class="stat-item">
+          <h2><span class="count-up" data-target="6000">0</span>+</h2>
+          <p>Educational Kits Distributed</p>
+        </div>
+        <div class="stat-item">
+          <h2><span class="count-up" data-target="121">0</span></h2>
+          <p>Children Receiving Daily Meals</p>
+        </div>
+        <div class="stat-item">
+          <h2><span class="count-up" data-target="13">0</span></h2>
+          <p>Medical Camps Conducted</p>
+        </div>
+        <div class="stat-item">
+          <h2><span class="count-up" data-target="5">0</span></h2>
+          <p>Years of Service</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS AREAS (from Image 1 - Colorful Cards) -->
+  <section class="focus-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Focus Areas</h2>
+        <p>Comprehensive programs addressing key areas of child development and community support</p>
+      </div>
+
+      <div class="focus-grid">
+        <!-- Education (Blue) -->
+        <a href="education-support.html" class="focus-card blue-card">
+          <img src="advayapictures/DSC06869.JPG" class="card-bg-img">
+          <div class="card-overlay highlight-blue"></div>
+          <div class="card-content">
+            <div class="icon-circle"><i class="fas fa-graduation-cap"></i></div>
+            <h3>Education Support</h3>
+            <p>Quality education programs for underprivileged children.</p>
+            <div class="card-footer">
+              <span class="tag"><span class="count-up" data-target="535">0</span>+ children</span>
+              <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Nutrition (Orange) -->
+        <a href="nutrition-program.html" class="focus-card orange-card">
+          <img src="advayapictures/DSC07429.JPG" class="card-bg-img">
+          <div class="card-overlay highlight-orange"></div>
+          <div class="card-content">
+            <div class="icon-circle"><i class="fas fa-utensils"></i></div>
+            <h3>Nutrition Program</h3>
+            <p>Balanced daily meals for healthy growth and learning.</p>
+            <div class="card-footer">
+              <span class="tag"><span class="count-up" data-target="121">0</span> daily meals</span>
+              <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Healthcare (Pink) -->
+        <a href="healthcare-access.html" class="focus-card pink-card">
+          <img src="advayapictures/DSC06947.JPG" class="card-bg-img">
+          <div class="card-overlay highlight-pink"></div>
+          <div class="card-content">
+            <div class="icon-circle"><i class="fas fa-heartbeat"></i></div>
+            <h3>Healthcare Access</h3>
+            <p>Medical camps and health support for children.</p>
+            <div class="card-footer">
+              <span class="tag"><span class="count-up" data-target="13">0</span> medical camps</span>
+              <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Mobile School (Green) -->
+        <a href="mobile-school.html" class="focus-card green-card">
+          <img src="advayapictures/DSC06862.JPG" class="card-bg-img">
+          <div class="card-overlay highlight-green"></div>
+          <div class="card-content">
+            <div class="icon-circle"><i class="fas fa-bus"></i></div>
+            <h3>Mobile School</h3>
+            <p>Bringing education to remote settlements.</p>
+            <div class="card-footer">
+              <span class="tag"><span class="count-up" data-target="100">0</span>+ children reached</span>
+              <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT SECTION (from Image 2 - Video) -->
+  <section class="impact-section">
+    <div class="container">
+      <div class="impact-header">
+        <h2>See Our Impact in Action</h2>
+        <p>Watch how we're transforming lives through education, nutrition, and care</p>
+      </div>
+
+      <div class="video-card">
+        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/v7CZ0QVqHLA"
+          title="Journey of Hope - Advaya" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen style="aspect-ratio: 16/9; display: block;"></iframe>
+      </div>
+
+      <div class="impact-stats">
+        <div class="impact-stat-item">
+          <h3><span class="count-up" data-target="535">0</span>+</h3>
+          <p>Children in School</p>
+        </div>
+        <div class="impact-stat-item">
+          <h3><span class="count-up" data-target="27">0</span>%</h3>
+          <p>Reduction in Malnutrition</p>
+        </div>
+        <div class="impact-stat-item">
+          <h3><span class="count-up" data-target="5">0</span> Years</h3>
+          <p>Of Transforming Lives</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS SECTION (from Image 2 - Whites Cards) -->
+  <section class="programs-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Programs</h2>
+        <p>Comprehensive support programs designed to empower children through education, nutrition, and healthcare</p>
+      </div>
+
+      <div class="programs-grid">
+        <!-- Card 1 -->
+        <a href="education-support.html" class="program-card">
+          <div class="program-img-wrapper">
+            <img src="advayapictures/DSC07133.JPG" alt="Day Care">
+            <div class="program-icon"><i class="fas fa-book-open"></i></div>
+          </div>
+          <div class="program-content">
+            <h3>Day Care Programme</h3>
+            <p>Nurturing environment for children aged 3-6 years, providing early education.</p>
+            <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <!-- Card 2 -->
+        <a href="education-support.html" class="program-card">
+          <div class="program-img-wrapper">
+            <img src="advayapictures/DSC07056.JPG" alt="Bridging School">
+            <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
+          </div>
+          <div class="program-content">
+            <h3>Bridging School Programme</h3>
+            <p>For children aged 6-14 who have dropped out or never enrolled.</p>
+            <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <!-- Card 3 -->
+        <a href="education-support.html" class="program-card">
+          <div class="program-img-wrapper">
+            <img src="advayapictures/DSC06932 (1).JPG" alt="Evening Study">
+            <div class="program-icon"><i class="fas fa-book-reader"></i></div>
+          </div>
+          <div class="program-content">
+            <h3>Evening Study Centre</h3>
+            <p>Supporting children transitioning to formal schools with homework help.</p>
+            <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+        <!-- Card 4 -->
+        <a href="mobile-school.html" class="program-card">
+          <div class="program-img-wrapper">
+            <img src="advayapictures/DSC06862.JPG" alt="Mobile School">
+            <div class="program-icon"><i class="fas fa-bus"></i></div>
+          </div>
+          <div class="program-content">
+            <h3>Mobile School Initiative</h3>
+            <p>Bringing education directly to children in slum settlements.</p>
+            <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="impact-section" style="margin-top:0;">
+    <div class="hero-overlay" style="z-index: 0; background: var(--impact-gradient);"></div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="impact-header">
+        <h2>Join Our Mission</h2>
+        <p>Your support can light up a child's future today.</p>
+      </div>
+      <a href="donate.html" class="hero-btn" style="background:var(--primary-main); color:white;">Donate Now</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Advaya Trust</h3>
+        <p>Empowering communities, one life at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="getinvolved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>info@advayatrust.org</p>
+        <p>Mumbai, India</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Access | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .edu-content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 992px) {
+            .edu-content-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .impact-snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .snapshot-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+            border: 1px solid rgba(107, 70, 193, 0.1);
+        }
+
+        .snapshot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .snapshot-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            background: var(--bg-body);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--primary-main);
+        }
+
+        .snapshot-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .snapshot-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html" class="active">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <img src="advayapictures/DSC06947.JPG" class="page-header-bg" alt="Healthcare Access">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Healthcare Access</h1>
+            <p>Ensuring healthy lives and promoting well-being for every child in our care.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="content-section">
+        <div class="container">
+            <div class="edu-content-grid">
+                <div class="edu-text">
+                    <h2 style="color: var(--primary-dark); font-weight: 800; font-size: 2.5rem; margin-bottom: 20px;">
+                        Health & Well-being</h2>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">In the communities we serve,
+                        children often face daily challenges due to inadequate access to basic health care, hygiene
+                        awareness, and sanitation facilities. Poor living conditions and limited health education
+                        contribute to frequent illness, school absenteeism, and, in some cases, early dropout.</p>
+
+                    <p style="margin-bottom: 20px; line-height: 1.8;">Recognizing the importance of health in education,
+                        we've integrated hygiene and WASH (Water, Sanitation, and Hygiene) facilities in schools, along
+                        with menstrual health support for adolescent girls. Regular BMI tracking, menstrual hygiene
+                        awareness, dental and eye camps help children grow in a safe and supportive environment.</p>
+
+                    <p style="margin-bottom: 20px; line-height: 1.8;">These efforts have led to improved health
+                        outcomes, reduced absenteeism, and greater confidence among students—ensuring every child is not
+                        only educated but also healthy, protected, and empowered.</p>
+
+                    <p style="line-height: 1.8;">In addition to the camps, our teachers consistently monitored and
+                        recorded each child’s height and weight to track their physical development. When a medical
+                        issue was identified, our team ensured follow-up care, including arranging hospital visits,
+                        surgeries, and treatments in coordination with medical professionals and supporting
+                        organizations.</p>
+
+                    <div
+                        style="margin-top: 30px; background: rgba(107, 70, 193, 0.05); padding: 25px; border-radius: var(--radius-md); border-left: 5px solid var(--primary-main);">
+                        <p style="font-weight: 500; color: var(--primary-dark);">This consistent focus on healthcare has
+                            led to tangible improvements – better overall health, early identification of health
+                            concerns, and a noticeable reduction in illness-related absenteeism.</p>
+                    </div>
+                </div>
+                <div class="edu-image">
+                    <img src="advayapictures/DSC07121.JPG" alt="Medical Camp"
+                        style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                    <div
+                        style="margin-top: 30px; background: white; padding: 25px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border-left: 5px solid var(--accent-pink);">
+                        <p style="font-style: italic; color: var(--text-muted);">"For many children, this was the first
+                            time they were seen by a doctor or received any form of medical attention."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMPACT SNAPSHOT -->
+            <div class="section-header" style="margin-top: 60px;">
+                <h2>Healthcare Impact</h2>
+                <p>The measurable difference your support makes in ensuring a healthy childhood.</p>
+            </div>
+
+            <div class="impact-snapshot-grid">
+                <!-- 1 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-hospital-user"></i></div>
+                    <span class="snapshot-number">13</span>
+                    <p class="snapshot-desc">Medical camps were conducted at the centre and the communities</p>
+                </div>
+                <!-- 2 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-stethoscope"></i></div>
+                    <span class="snapshot-number">1,733</span>
+                    <p class="snapshot-desc">Children and parents were examined during these health check-ups</p>
+                </div>
+                <!-- 3 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-first-aid"></i></div>
+                    <span class="snapshot-number">750+</span>
+                    <p class="snapshot-desc">Medical Kits provided throughout year</p>
+                </div>
+                <!-- 4 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-virus-slash"></i></div>
+                    <span class="snapshot-number">7</span>
+                    <p class="snapshot-desc">Covid Screening Camps Conducted</p>
+                </div>
+                <!-- 5 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-tooth"></i></div>
+                    <span class="snapshot-number">30+</span>
+                    <p class="snapshot-desc">Students taken for Dental Treatment and care</p>
+                </div>
+                <!-- 6 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-mask-face"></i></div>
+                    <span class="snapshot-number">3000+</span>
+                    <p class="snapshot-desc">Masks and Sanitizer distribution during health drives</p>
+                </div>
+                <!-- 7 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-star"></i></div>
+                    <span class="snapshot-number">4</span>
+                    <p class="snapshot-desc">Special Children's Education and health being supported</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="impact-section" style="margin-top:0;">
+        <div class="hero-overlay" style="z-index: 0; background: var(--impact-gradient);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="impact-header">
+                <h2>Join Our Health Mission</h2>
+                <p>Your support helps us reach more children with life-saving healthcare and hygiene.</p>
+            </div>
+            <a href="donate.html" class="hero-btn" style="background:var(--primary-main); color:white;">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Advaya Trust</h3>
+                <p>Empowering communities, one life at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>info@advayatrust.org</p>
+                <p>Mumbai, India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

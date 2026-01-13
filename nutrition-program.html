@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Programme | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .edu-content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 992px) {
+            .edu-content-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .impact-snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .snapshot-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+            border: 1px solid rgba(107, 70, 193, 0.1);
+        }
+
+        .snapshot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .snapshot-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            background: var(--bg-body);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--primary-main);
+        }
+
+        .snapshot-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .snapshot-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .impact-list {
+            list-style: none;
+            margin-top: 40px;
+        }
+
+        .impact-list-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(107, 70, 193, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .impact-list-item:hover {
+            transform: translateX(10px);
+            background: var(--bg-body);
+        }
+
+        .impact-dot {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .impact-text {
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html" class="active">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <img src="advayapictures/DSC07429.JPG" class="page-header-bg" alt="Nutrition Programme">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Nutrition Programme</h1>
+            <p>Nourishing bodies, empowering minds, and building healthier futures.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="content-section">
+        <div class="container">
+            <div class="edu-content-grid">
+                <div class="edu-text">
+                    <h2 style="color: var(--primary-dark); font-weight: 800; font-size: 2.5rem; margin-bottom: 20px;">
+                        Nourishing Every Child</h2>
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.8;">Malnutrition remains one of the
+                        most persistent and deep-rooted challenges faced by children across India, particularly among
+                        those from marginalized and migrant communities. Poor nutrition in the early years not only
+                        weakens a child physically but also delays learning, affects school participation, and limits
+                        future potential.</p>
+
+                    <p style="margin-bottom: 20px; line-height: 1.8;">At Advaya Educational and Charitable Trust, we
+                        witness these realities every day. Many of the children who come to us live in makeshift homes,
+                        with low immunity, and chronic health issues, with families struggling to afford even two basic
+                        meals a day. Hunger dominates their daily lives, and education often takes a back seat.</p>
+
+                    <p style="margin-bottom: 20px; line-height: 1.8;">That's why we started our daily nutrition
+                        programme—to ensure that every child at Advaya receives nutritious, home-cooked meals in a safe,
+                        loving environment. These meals not only satisfy hunger but also build strength, focus, and joy.
+                        A well-fed child learns better, grows healthier, and begins to dream bigger.</p>
+
+                    <p style="line-height: 1.8;">Our work goes beyond feeding—it's about restoring dignity, boosting
+                        classroom attendance, and helping children break free from the intergenerational cycle of
+                        poverty. With every meal served, we move one step closer to a future where every child can
+                        learn, grow, and thrive.</p>
+
+                    <div
+                        style="margin-top: 30px; background: rgba(107, 70, 193, 0.05); padding: 25px; border-radius: var(--radius-md); border-left: 5px solid var(--primary-main);">
+                        <p style="font-weight: 500; color: var(--primary-dark);">The Advaya nutrition program provides
+                            well-balanced daily Nutrition, including two meals and two snacks daily, with lunch provided
+                            by the Akshay Pathra Mid-day meal program.</p>
+                    </div>
+                </div>
+                <div class="edu-image">
+                    <div class="impact-list">
+                        <div class="impact-list-item">
+                            <div class="impact-dot"><i class="fas fa-check"></i></div>
+                            <div class="impact-text">Reduce classroom hunger</div>
+                        </div>
+                        <div class="impact-list-item">
+                            <div class="impact-dot"><i class="fas fa-check"></i></div>
+                            <div class="impact-text">Increase school enrollment and attendance</div>
+                        </div>
+                        <div class="impact-list-item">
+                            <div class="impact-dot"><i class="fas fa-check"></i></div>
+                            <div class="impact-text">Improve nutritional levels among children</div>
+                        </div>
+                        <div class="impact-list-item">
+                            <div class="impact-dot"><i class="fas fa-check"></i></div>
+                            <div class="impact-text">Encourage education among underserved communities</div>
+                        </div>
+                    </div>
+                    <img src="advayapictures/DSC06966.JPG" alt="Children Eating"
+                        style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); margin-top: 30px;">
+                </div>
+            </div>
+
+            <!-- IMPACT SNAPSHOT -->
+            <div class="section-header" style="margin-top: 60px;">
+                <h2>Impact Snapshot</h2>
+                <p>The measurable difference your support makes in the lives of children.</p>
+            </div>
+
+            <div class="impact-snapshot-grid">
+                <!-- 1 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-child"></i></div>
+                    <span class="snapshot-number">535</span>
+                    <p class="snapshot-desc">Children have benefited from our Nutrition program</p>
+                </div>
+                <!-- 2 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-utensils"></i></div>
+                    <span class="snapshot-number">121</span>
+                    <p class="snapshot-desc">Children are currently receiving nutritious meals every day at Advaya</p>
+                </div>
+                <!-- 3 -->
+                <div class="snapshot-card">
+                    <div class="snapshot-icon"><i class="fas fa-chart-line"></i></div>
+                    <span class="snapshot-number">27%</span>
+                    <p class="snapshot-desc">Reduction in malnutrition among our students</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="impact-section" style="margin-top:0;">
+        <div class="hero-overlay" style="z-index: 0; background: var(--impact-gradient);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="impact-header">
+                <h2>Join Our Mission</h2>
+                <p>Your contribution helps us provide healthy meals to more children in need.</p>
+            </div>
+            <a href="donate.html" class="hero-btn" style="background:var(--primary-main); color:white;">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Advaya Trust</h3>
+                <p>Empowering communities, one life at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>info@advayatrust.org</p>
+                <p>Mumbai, India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
