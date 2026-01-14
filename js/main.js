@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         const counter = entry.target;
         const target = +counter.getAttribute('data-target');
-        const duration = 2000; // Animation duration in ms
+        const duration = 5000; // Animation duration in ms
         const increment = target / (duration / 16); // 60fps approx
 
         let current = 0;
