@@ -1345,3 +1345,10 @@ footer {
     background: var(--gradient-brand);
     border-radius: 2px;
 }
+/* Custom 2-col grid for About page Vision/Mission */
+@media (min-width: 768px) {
+    .mission-grid-2-col {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-width: 900px !important;
+    }
+}
