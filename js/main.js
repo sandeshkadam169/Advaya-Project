@@ -44,26 +44,73 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  document.querySelector("#donationForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+  // STEP 1: Donation Details Submission
+  const step1Form = document.querySelector("#donationStep1Form");
+  if (step1Form) {
+    step1Form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    fetch("https://script.google.com/macros/s/AKfycbyqZuglhgBoNQkf_W1PHQM8vtLWKZ-L6qdRBAXn_R_s24TT_TYSyjmGc-08WjHEunbq6Q/exec", {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
-      body: JSON.stringify({
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        amount: document.getElementById("amount").value,
-      
-        transactionId: document.getElementById("transactionId").value
+      // Get values
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const amount = document.getElementById("amount").value;
+
+      // Save to Session Storage
+      sessionStorage.setItem("donationName", name);
+      sessionStorage.setItem("donationEmail", email);
+      sessionStorage.setItem("donationPhone", phone);
+      sessionStorage.setItem("donationAmount", amount);
+
+      // Redirect to Payment Page
+      window.location.href = "payment.html";
+    });
+  }
+
+  // STEP 2: Payment Confirmation Submission
+  const step2Form = document.querySelector("#paymentConfirmationForm");
+  if (step2Form) {
+    step2Form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const transactionId = document.getElementById("transactionId").value;
+
+      // Retrieve data from Session Storage
+      const donationData = {
+        name: sessionStorage.getItem("donationName"),
+        email: sessionStorage.getItem("donationEmail"),
+        phone: sessionStorage.getItem("donationPhone"),
+        amount: sessionStorage.getItem("donationAmount"),
+        transactionId: transactionId
+      };
+
+      if (!donationData.name || !donationData.amount) {
+        alert("Session expired or invalid data. Please start over.");
+        window.location.href = "donate.html";
+        return;
+      }
+
+      // Submit to Google Sheet API
+      fetch("https://script.google.com/macros/s/AKfycbyqZuglhgBoNQkf_W1PHQM8vtLWKZ-L6qdRBAXn_R_s24TT_TYSyjmGc-08WjHEunbq6Q/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(donationData)
       })
-    })
-      .then(res => res.json())
-      .then(data => alert("Donation saved successfully!"));
-  });
+        .then(res => res.json())
+        .then(data => {
+          alert("Donation saved successfully! Thank you for your support.");
+          // Clear session and redirect home or show success message
+          sessionStorage.clear();
+          window.location.href = "index.html";
+        })
+        .catch(err => {
+          console.error("Error:", err);
+          alert("Something went wrong. Please try again or contact support.");
+        });
+    });
+  }
 
 });
 

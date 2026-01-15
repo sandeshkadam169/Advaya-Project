@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment | Advaya Trust</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --premium-gradient: linear-gradient(135deg, #6b46c1 0%, #d53f8c 100%);
+        }
+
+        .payment-page-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #f8f7ff 0%, #ffffff 100%);
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .payment-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .qr-placeholder {
+            width: 250px;
+            height: 250px;
+            margin: 20px auto;
+            background: #f8fafc;
+            border: 2px dashed #cbd5e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .qr-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .premium-input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: var(--radius-md);
+            border: 2px solid #edf2f7;
+            background: #f8fafc;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .premium-input:focus {
+            outline: none;
+            border-color: var(--primary-main);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(107, 70, 193, 0.1);
+        }
+
+        .donate-submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--premium-gradient);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+            box-shadow: 0 10px 20px rgba(107, 70, 193, 0.2);
+        }
+
+        .donate-submit-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(107, 70, 193, 0.3);
+        }
+
+        .step-indicator {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn active">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="payment-page-section">
+        <div class="payment-card">
+            <p class="step-indicator">Step 2 of 2</p>
+            <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 20px;">Complete
+                Your Donation</h2>
+
+            <p style="margin-bottom: 10px;">Scan the QR code below to pay <strong id="displayAmount"
+                    style="color: var(--primary-main);">₹ 0</strong></p>
+
+            <div class="qr-placeholder">
+                <img src="advayapictures/qrcode_placeholder.png" alt="QR Code"
+                    onclick="alert('Add your actual QR code image at advayapictures/qrcode.jpg')"
+                    onerror="this.parentElement.innerHTML='<span style=\'color: #aaa;\'>QR Code Placeholder</span>'">
+            </div>
+
+            <form id="paymentConfirmationForm" style="text-align: left; margin-top: 30px;">
+                <label
+                    style="display: block; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; font-size: 0.9rem;">TRANSACTION
+                    ID</label>
+                <input type="text" id="transactionId" class="premium-input" placeholder="Enter UPI/Bank Transaction ID"
+                    required>
+
+                <button type="submit" class="donate-submit-btn">
+                    Payment Completed
+                    <i class="fas fa-check-circle"></i>
+                </button>
+            </form>
+
+            <a href="donate.html"
+                style="display: block; margin-top: 20px; color: var(--text-muted); font-size: 0.9rem; text-decoration: underline;">Go
+                Back</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Advaya Trust</h3>
+                <p>Empowering communities, one life at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>info@advayatrust.org</p>
+                <p>Mumbai, India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Load amount for display on load
+        document.addEventListener("DOMContentLoaded", () => {
+            const amount = sessionStorage.getItem("donationAmount");
+            if (amount) {
+                document.getElementById("displayAmount").innerText = "₹ " + amount;
+            } else {
+                // If no session data, redirect back to start
+                // window.location.href = "donate.html";
+            }
+        });
+    </script>
+</body>
+
+</html>
