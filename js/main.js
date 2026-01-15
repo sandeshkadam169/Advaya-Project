@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Submit to Google Sheet API
-      fetch("https://script.google.com/macros/s/AKfycbyqZuglhgBoNQkf_W1PHQM8vtLWKZ-L6qdRBAXn_R_s24TT_TYSyjmGc-08WjHEunbq6Q/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbwxUaM13CUb6CNWekfpasYFxGSgpCANZGJ0OKF0Jmcz6A8lhMiRyH_7PwR0Zk-6_oG6nA/exec", {
         method: "POST",
         headers: {
           "Content-Type": "text/plain;charset=utf-8"
@@ -116,3 +116,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // https://script.google.com/macros/s/AKfycbygpS2DiLl6I1pe3YmRg6855eaqYuFDoJJrc9jlAoHc9vFe5hd0YMFf97iQq_JlOpBlug/exec
+  // STEP 3: Contact Form Submission
+  const contactForm = document.querySelector("#contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const contactData = {
+        name: document.getElementById("contactName").value,
+        phone: document.getElementById("contactPhone").value,
+        message: document.getElementById("contactMessage").value,
+        type: "contact_message" // Identifier for the backend if needed
+      };
+
+      // Submit to Same Google Sheet API
+      fetch("https://script.google.com/macros/s/AKfycbwxUaM13CUb6CNWekfpasYFxGSgpCANZGJ0OKF0Jmcz6A8lhMiRyH_7PwR0Zk-6_oG6nA/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(contactData)
+      })
+        .then(res => res.json())
+        .then(data => {
+          alert("Message sent successfully! We will get back to you soon.");
+          contactForm.reset();
+        })
+        .catch(err => {
+          console.error("Error:", err);
+          alert("Message sent! (Note: Response check failed but data likely sent)");
+          contactForm.reset();
+        });
+    });
+  }

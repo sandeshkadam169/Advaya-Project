@@ -56,9 +56,9 @@
 
   <!-- CONTACT CONTENT -->
   <section class="content-section">
-    <div class="contact-container" style="max-width: 1200px; display: block;">
+    <div class="contact-container">
       <!-- Left Panel: Info -->
-      <div class="contact-info" style="width: 100%;">
+      <div class="contact-info">
         <h2>Contact Information</h2>
         <div class="info-item">
           <i class="fas fa-map-marker-alt"></i>
@@ -84,25 +84,40 @@
       </div>
 
       <!-- Right Panel: Form -->
-      <!-- <div class="contact-form">
-        <h2>Send a Message</h2>
-        <form>
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" class="form-control" placeholder="John Doe">
+      <div class="contact-form-wrapper"
+        style="background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <h2 style="font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 30px; font-weight: 800;">Send a Message
+        </h2>
+        <form id="contactForm">
+          <div style="margin-bottom: 20px;">
+            <label
+              style="display: block; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; font-size: 0.9rem;">YOUR
+              NAME</label>
+            <input type="text" id="contactName"
+              style="width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #edf2f7; background: #f8fafc; font-family: inherit;"
+              required placeholder="Enter your name">
           </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" class="form-control" placeholder="john@example.com">
+          <div style="margin-bottom: 20px;">
+            <label
+              style="display: block; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; font-size: 0.9rem;">PHONE
+              NUMBER</label>
+            <input type="tel" id="contactPhone"
+              style="width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #edf2f7; background: #f8fafc; font-family: inherit;"
+              required placeholder="+91">
           </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea class="form-control" rows="5" placeholder="How can we help you?"></textarea>
+          <div style="margin-bottom: 20px;">
+            <label
+              style="display: block; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; font-size: 0.9rem;">MESSAGE</label>
+            <textarea id="contactMessage" rows="5"
+              style="width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #edf2f7; background: #f8fafc; font-family: inherit;"
+              required placeholder="How can we help you?"></textarea>
           </div>
-          <button type="submit" class="submit-btn">Send Message</button>
+          <button type="submit" class="hero-btn"
+            style="width: 100%; justify-content: center; background: var(--primary-main); color: white; border: none; cursor: pointer;">Send
+            Message</button>
         </form>
       </div>
-    </div>-->
+    </div>
   </section>
 
   <!-- MAP SECTION -->
