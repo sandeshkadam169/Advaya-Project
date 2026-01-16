@@ -42,15 +42,32 @@
 
         .story-img-container {
             position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
         }
 
         .story-img-container img {
             width: 100%;
-            height: 450px;
+            height: 0;
+            padding-bottom: 100%;
+            /* Creates 1:1 aspect ratio */
             object-fit: cover;
-            border-radius: var(--radius-lg);
+            border-radius: 50%;
             box-shadow: var(--shadow-lg);
             border: 5px solid white;
+            object-position: center;
+        }
+
+        /* Ensure image displays properly in circular container */
+        .story-img-container {
+            aspect-ratio: 1 / 1;
+        }
+
+        .story-img-container img {
+            width: 100%;
+            height: 100%;
+            padding-bottom: 0;
         }
 
         .story-img-container::before {
@@ -201,7 +218,7 @@
             <div class="story-section alternate">
                 <div class="story-grid">
                     <div class="story-img-container">
-                        <img src="advayapictures/DSC06947.JPG" alt="Sanjeetha">
+                        <img src="advayapictures/sangeeta.JPG" alt="Sanjeetha">
                     </div>
                     <div class="story-text">
                         <h3>Sanjeetha</h3>
@@ -225,8 +242,7 @@
             <div class="story-section">
                 <div class="story-grid">
                     <div class="story-img-container">
-                        <img src="advayapictures/DSC06848.JPG" alt="Nagashree"
-                        style= "contain-intrinsic-height: ;">
+                        <img src="advayapictures/nagashree.JPG" alt="Nagashree" style="contain-intrinsic-height: ;">
                     </div>
                     <div class="story-text">
                         <h3>Nagashree</h3>
@@ -250,7 +266,7 @@
             <div class="story-section alternate">
                 <div class="story-grid">
                     <div class="story-img-container">
-                        <img src="advayapictures/DSC06888.JPG" alt="Gajendra">
+                        <img src="advayapictures/gajendra.JPG" alt="Gajendra">
                     </div>
                     <div class="story-text">
                         <h3>Gajendra</h3>
@@ -276,7 +292,7 @@
             <div class="story-section">
                 <div class="story-grid">
                     <div class="story-img-container">
-                        <img src="advayapictures/DSC07118.JPG" alt="Khushbu">
+                        <img src="advayapictures/khushbu.JPG" alt="Khushbu">
                     </div>
                     <div class="story-text">
                         <h3>Khushbu's Journey</h3>
@@ -334,8 +350,8 @@
             </div>
             <div class="footer-col">
                 <h3>Contact</h3>
-                <p>info@advayatrust.org</p>
-                <p>Mumbai, India</p>
+                <p>advayatrust@gmail.com</p>
+                <p>JMJ Lazarus Park, Kithiganur, K.R Puram, Bengaluru - 560036</p>
             </div>
         </div>
         <div class="copyright">
