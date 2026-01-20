@@ -116,36 +116,124 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // https://script.google.com/macros/s/AKfycbygpS2DiLl6I1pe3YmRg6855eaqYuFDoJJrc9jlAoHc9vFe5hd0YMFf97iQq_JlOpBlug/exec
-  // STEP 3: Contact Form Submission
-  const contactForm = document.querySelector("#contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+// STEP 3: Contact Form Submission
+const contactForm = document.querySelector("#contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      const contactData = {
-        name: document.getElementById("contactName").value,
-        phone: document.getElementById("contactPhone").value,
-        message: document.getElementById("contactMessage").value,
-        type: "contact_message" // Identifier for the backend if needed
-      };
+    const contactData = {
+      name: document.getElementById("contactName").value,
+      phone: document.getElementById("contactPhone").value,
+      message: document.getElementById("contactMessage").value,
+      type: "contact_message" // Identifier for the backend if needed
+    };
 
-      // Submit to Same Google Sheet API
-      fetch("https://script.google.com/macros/s/AKfycbwxUaM13CUb6CNWekfpasYFxGSgpCANZGJ0OKF0Jmcz6A8lhMiRyH_7PwR0Zk-6_oG6nA/exec", {
-        method: "POST",
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8"
-        },
-        body: JSON.stringify(contactData)
+    // Submit to Same Google Sheet API
+    fetch("https://script.google.com/macros/s/AKfycbwxUaM13CUb6CNWekfpasYFxGSgpCANZGJ0OKF0Jmcz6A8lhMiRyH_7PwR0Zk-6_oG6nA/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(contactData)
+    })
+      .then(res => res.json())
+      .then(data => {
+        alert("Message sent successfully! We will get back to you soon.");
+        contactForm.reset();
       })
-        .then(res => res.json())
-        .then(data => {
-          alert("Message sent successfully! We will get back to you soon.");
-          contactForm.reset();
-        })
-        .catch(err => {
-          console.error("Error:", err);
-          alert("Message sent! (Note: Response check failed but data likely sent)");
-          contactForm.reset();
-        });
-    });
+      .catch(err => {
+        console.error("Error:", err);
+        alert("Message sent! (Note: Response check failed but data likely sent)");
+        contactForm.reset();
+      });
+  });
+}
+
+// HERO CAROUSEL LOGIC
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.dot');
+let slideInterval;
+
+function showSlide(index) {
+  if (slides.length === 0) return;
+
+  // Reset contents
+  slides.forEach(slide => {
+    slide.classList.remove('active');
+    slide.style.opacity = '0';
+    slide.style.zIndex = '1';
+  });
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  // Handle bounds
+  if (index >= slides.length) currentSlideIndex = 0;
+  if (index < 0) currentSlideIndex = slides.length - 1;
+
+  // specific Index logic if passed directly
+  if (typeof index === 'number' && index >= 0 && index < slides.length) {
+    currentSlideIndex = index;
   }
+
+  // Set Active
+  slides[currentSlideIndex].classList.add('active');
+  slides[currentSlideIndex].style.opacity = '1';
+  slides[currentSlideIndex].style.zIndex = '5';
+  if (dots[currentSlideIndex]) dots[currentSlideIndex].classList.add('active');
+}
+
+function nextSlide() {
+  currentSlideIndex++;
+  showSlide(currentSlideIndex);
+  resetInterval();
+}
+
+function prevSlide() {
+  currentSlideIndex--;
+  showSlide(currentSlideIndex);
+  resetInterval();
+}
+
+function currentSlide(n) {
+  showSlide(n);
+  resetInterval();
+}
+
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 5000);
+}
+
+// Initialize Carousel
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelectorAll('.hero-slide').length > 0) {
+    // Re-select in case of dom load consistency
+    const slides = document.querySelectorAll('.hero-slide');
+    showSlide(0);
+    slideInterval = setInterval(nextSlide, 5000);
+  }
+});
+
+
+// Testimonial Section Logic
+let testimonialIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial-slide');
+
+function showTestimonial(n) {
+  if (testimonials.length === 0) return;
+  testimonials.forEach(t => t.classList.remove('active'));
+  testimonialIndex = (n + testimonials.length) % testimonials.length;
+  testimonials[testimonialIndex].classList.add('active');
+}
+
+function nextTestimonial() {
+  showTestimonial(testimonialIndex + 1);
+}
+
+function prevTestimonial() {
+  showTestimonial(testimonialIndex - 1);
+}
+
+// Auto-play disabled per user request
+// setInterval(nextTestimonial, 8000);

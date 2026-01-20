@@ -28,11 +28,16 @@
       <nav id="nav-menu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="stories.html">Stories</a></li>
+          <li class="dropdown">
+            <a href="about.html" class="dropdown-toggle active">Who We Are <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="about.html#achievements">Achievements</a></li>
+              <li><a href="stories.html">Stories</a></li>
+            </ul>
+          </li>
           <li><a href="getinvolved.html">Get Involved</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
@@ -45,14 +50,20 @@
   </header>
 
   <!-- PAGE HEADER -->
-  <section class="page-header">
+  <section class="page-header"
+    style="height: 400px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
     <img src="advayapictures/DSC07046 (1).JPG" class="page-header-bg" alt="About Us Background"
-      style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; height: 100%; object-fit: cover; object-position: top;">>
-    <div class="page-header-overlay"></div>
-    <div class="page-header-content">
-      <h1>Who We Are</h1>
-      <p>Advaya Education & Charitable Trust is dedicated to bridging the gap in education and healthcare for
-        underprivileged communities.</p>
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
+    <div class="page-header-overlay"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(76, 29, 149, 0.9) 0%, rgba(107, 70, 193, 0.8) 100%); z-index: -1;">
+    </div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <h1
+        style="font-size: 4rem; font-weight: 800; margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,0.3); text-transform: uppercase; letter-spacing: -1px;">
+        Who We Are</h1>
+      <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto; opacity: 0.9; line-height: 1.6;">Advaya Education
+        & Charitable Trust is dedicated to bridging the gap in education and healthcare for underprivileged communities.
+      </p>
     </div>
   </section>
 
@@ -61,26 +72,29 @@
     <div class="container">
 
       <!-- Introduction Section -->
-      <div class="about-grid">
-        <div class="about-img">
+      <div class="about-grid" style="align-items: center; gap: 50px; margin-bottom: 80px;">
+        <div class="about-img" style="position: relative;">
+          <div
+            style="position: absolute; top: -15px; left: -15px; width: 100%; height: 100%; border: 3px solid #eedfff; border-radius: var(--radius-lg); z-index: -1;">
+          </div>
           <img src="advayapictures/DSC07186.JPG" alt="Our Story"
-            style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%;">
         </div>
         <div class="about-text">
-          <h2 style="color: var(--primary-dark); font-weight: 800; font-size: 2.5rem; margin-bottom: 20px;">Introduction
-          </h2>
-          <p style="margin-bottom: 15px;">Advaya Educational and Charitable Trust was established on 30th June 2020 with
+          <div
+            style="display: inline-block; padding: 5px 15px; background: #eedfff; color: var(--primary-dark); border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px;">
+            Our History</div>
+          <h2
+            style="color: var(--primary-dark); font-weight: 800; font-size: 2.8rem; margin-bottom: 25px; line-height: 1.1;">
+            Providing hope and a pathway to the future</h2>
+          <p style="margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">Advaya
+            Educational and Charitable Trust was established on 30th June 2020 with
             a noble goal to support and empower migrant communities by providing Quality Education, Nutrition, and
             Healthcare to children from Migrant communities.</p>
-          <p style="margin-bottom: 15px;">Advaya's main aim is to prevent dropouts from education, eradicate child
+          <p style="margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">Advaya's main
+            aim is to prevent dropouts from education, eradicate child
             labour and ensure every child has access to education. The families live in informal settlements like slums
-            in Tarpaulin/makeshift houses, near KR Puram, Bangalore. These places also lack access to proper sanitation
-            and water.</p>
-          <p>The children here receive all the support they need for their development, such as two meals (Breakfast and
-            Lunch), Snacks, Medical Care, Books, Bags, Uniforms, Sandals, Grocery Kits, and Hygiene Kits. Our Mission is
-            to Bridge the educational gap for children from migrant communities by offering equitable access to quality
-            education, empowering them to overcome barriers, and building a foundation for a successful and fulfilling
-            future.</p>
+            in Tarpaulin/makeshift houses, near KR Puram, Bangalore.</p>
         </div>
       </div>
 
@@ -90,75 +104,114 @@
         <p>Our guiding principles for a better future.</p>
       </div>
 
-      <div class="mission-grid mission-grid-2-col">
+      <div class="mission-grid mission-grid-2-col" style="gap: 30px;">
         <!-- Vision -->
         <div class="mission-card"
-          style="background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); padding: 30px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-          <div class="icon-circle" style="color: var(--accent-pink); background: white;"><i class="fas fa-eye"></i>
+          style="background: white; border: 2px solid #eedfff; padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div
+            style="position: absolute; top: -20px; right: -20px; font-size: 8rem; color: rgba(107, 70, 193, 0.05); z-index: 0;">
+            <i class="fas fa-eye"></i>
           </div>
-          <h3 style="color: var(--primary-main); margin-top: 15px;">Our Vision</h3>
-          <p>To provide equitable and quality education support to children from underprivileged, migrant, and
+          <div class="icon-circle"
+            style="color: white; background: var(--primary-main); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 25px; position: relative; z-index: 1;">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3
+            style="color: var(--primary-dark); font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; position: relative; z-index: 1;">
+            Our Vision</h3>
+          <p style="font-size: 1.1rem; line-height: 1.7; position: relative; z-index: 1;">To provide equitable and
+            quality education support to children from underprivileged, migrant, and
             marginalized communities through inclusive learning programs.</p>
         </div>
 
         <!-- Mission -->
         <div class="mission-card"
-          style="background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); padding: 30px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-          <div class="icon-circle" style="color: var(--primary-light); background: white;"><i
-              class="fas fa-bullseye"></i></div>
-          <h3 style="color: var(--primary-main); margin-top: 15px;">Our Mission</h3>
-          <p>To set up preschools, daycares centers, Study Centers, Community Centers, and Short-stay homes for the
+          style="background: white; border: 2px solid #eedfff; padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div
+            style="position: absolute; top: -20px; right: -20px; font-size: 8rem; color: rgba(107, 70, 193, 0.05); z-index: 0;">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <div class="icon-circle"
+            style="color: white; background: var(--primary-main); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 25px; position: relative; z-index: 1;">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3
+            style="color: var(--primary-dark); font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; position: relative; z-index: 1;">
+            Our Mission</h3>
+          <p style="font-size: 1.1rem; line-height: 1.7; position: relative; z-index: 1;">To set up preschools, daycares
+            centers, Study Centers, Community Centers, and Short-stay homes for the
             children of migrant children.</p>
         </div>
       </div>
 
       <!-- Objectives Section -->
       <div class="objectives-section"
-        style="margin-top: 80px; background: white; padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+        style="margin-top: 80px; background: #fdfbff; padding: 60px 40px; border-radius: var(--radius-lg); box-shadow: inset 0 0 40px rgba(107, 70, 193, 0.05); border: 1px solid #eedfff;">
         <h2
-          style="color: var(--primary-dark); font-weight: 800; font-size: 2rem; margin-bottom: 30px; text-align: center;">
-          Objectives</h2>
-        <ul class="custom-list" style="list-style: none; max-width: 900px; margin: 0 auto;">
-          <li style="margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-start;">
-            <i class="fas fa-check-circle" style="color: var(--accent-pink); font-size: 1.2rem; margin-top: 5px;"></i>
-            <span style="font-size: 1.1rem; color: var(--text-dark);">To ensure <strong>access to quality
-                education</strong> for 180 migrant children living in Tarpaulin/makeshift houses in K.R Puram, Bengaluru
-              preventing them from dropping out.</span>
-          </li>
-          <li style="margin-bottom: 20px; display: flex; gap: 15px; align-items: flex-start;">
-            <i class="fas fa-check-circle" style="color: var(--accent-pink); font-size: 1.2rem; margin-top: 5px;"></i>
-            <span style="font-size: 1.1rem; color: var(--text-dark);">To provide comprehensive support for child
-              development, including <strong>nutritious meals, medical care, educational materials, and hygiene
-                kits</strong>.</span>
-          </li>
-          <li style="margin-bottom: 0; display: flex; gap: 15px; align-items: flex-start;">
-            <i class="fas fa-check-circle" style="color: var(--accent-pink); font-size: 1.2rem; margin-top: 5px;"></i>
-            <span style="font-size: 1.1rem; color: var(--text-dark);">To establish educational and community centers,
-              such as preschools, daycares, study centers, and short-stay homes, to increase the level of education
-              among migrant children and empower them for a better future.</span>
-          </li>
-        </ul>
+          style="color: var(--primary-dark); font-weight: 800; font-size: 2.5rem; margin-bottom: 40px; text-align: center;">
+          Key Objectives</h2>
+        <div style="max-width: 900px; margin: 0 auto; display: grid; gap: 25px;">
+          <div
+            style="background: white; padding: 25px; border-radius: 16px; display: flex; gap: 20px; align-items: flex-start; box-shadow: var(--shadow-sm); border-left: 6px solid var(--primary-main);">
+            <i class="fas fa-graduation-cap"
+              style="color: var(--primary-main); font-size: 1.5rem; margin-top: 5px;"></i>
+            <div>
+              <h4 style="color: var(--primary-dark); font-size: 1.2rem; font-weight: 700; margin-bottom: 5px;">Quality
+                Education</h4>
+              <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.6;">Ensure access for 180 migrant
+                children living in makeshift houses in K.R Puram, preventing school dropouts.</p>
+            </div>
+          </div>
+          <div
+            style="background: white; padding: 25px; border-radius: 16px; display: flex; gap: 20px; align-items: flex-start; box-shadow: var(--shadow-sm); border-left: 6px solid var(--accent-pink);">
+            <i class="fas fa-heartbeat" style="color: var(--accent-pink); font-size: 1.5rem; margin-top: 5px;"></i>
+            <div>
+              <h4 style="color: var(--primary-dark); font-size: 1.2rem; font-weight: 700; margin-bottom: 5px;">Holistic
+                Development</h4>
+              <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.6;">Provide nutritious meals,
+                medical care, educational materials, and essential hygiene kits for all-round growth.</p>
+            </div>
+          </div>
+          <div
+            style="background: white; padding: 25px; border-radius: 16px; display: flex; gap: 20px; align-items: flex-start; box-shadow: var(--shadow-sm); border-left: 6px solid #4facfe;">
+            <i class="fas fa-users" style="color: #4facfe; font-size: 1.5rem; margin-top: 5px;"></i>
+            <div>
+              <h4 style="color: var(--primary-dark); font-size: 1.2rem; font-weight: 700; margin-bottom: 5px;">Community
+                Empowerment</h4>
+              <p style="font-size: 1.05rem; color: var(--text-dark); line-height: 1.6;">Establish preschools, daycares,
+                and short-stay homes to foster a foundation for a fulfilling future.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Demographics Section -->
       <div class="demographics-section"
-        style="margin-top: 80px; display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
-        <div class="demo-text" style="flex: 1; min-width: 300px;">
-          <h2 style="color: var(--primary-dark); font-weight: 800; font-size: 2rem; margin-bottom: 20px;">Who We Serve
-          </h2>
-          <p style="font-size: 1.1rem; line-height: 1.8;">Children at Advaya come from migrant families hailing from
+        style="margin-top: 100px; display: flex; gap: 60px; align-items: center; flex-wrap: wrap; background: #fff; padding: 20px; border-radius: var(--radius-lg);">
+        <div class="demo-text" style="flex: 1.2; min-width: 300px;">
+          <div
+            style="display: inline-block; padding: 5px 15px; background: #eedfff; color: var(--primary-dark); border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px;">
+            Our Reach</div>
+          <h2 style="color: var(--primary-dark); font-weight: 800; font-size: 2.5rem; margin-bottom: 20px;">Empowering
+            children across diverse regions</h2>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px;">Children at
+            Advaya come from migrant families hailing from
             <strong>Uttar Pradesh, Bihar, West Bengal, Odisha, Yadgiri district in North Karnataka, and even
-              Nepal</strong>. These regions face poverty and limited access to education, pushing families to migrate to
-            Bangalore in search of work.
+              Nepal</strong>.
           </p>
+          <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted);">These regions face poverty and
+            limited access to education, pushing families to migrate to
+            Bangalore in search of work. At Advaya, we provide the stability and support they need.</p>
         </div>
-        <div class="demo-map"
-          style="flex: 1; min-width: 300px; background: rgba(255,255,255,0.5); padding: 20px; border-radius: var(--radius-lg); text-align: center;">
+        <div class="demo-map" style="flex: 1; min-width: 300px; position: relative;">
+          <div
+            style="position: absolute; top: 15px; right: -15px; width: 100%; height: 100%; background: #eedfff; border-radius: var(--radius-lg); z-index: -1;">
+          </div>
           <img src="advayapictures/DSC06966.JPG" alt="Migrant Children"
-            style="border-radius: var(--radius-md); box-shadow: var(--shadow-md); width: 100%; height: 300px; object-fit: cover;">
-          <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);">Children from diverse regions
-            finding hope at Advaya
-          </p>
+            style="border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); width: 100%; height: 350px; object-fit: cover;">
+          <div
+            style="position: absolute; bottom: 20px; left: 20px; background: white; padding: 10px 20px; border-radius: 12px; box-shadow: var(--shadow-md); font-weight: 700; color: var(--primary-main);">
+            180+ Children Supported</div>
         </div>
       </div>
       <!-- GALLERY SECTION -->

@@ -8,7 +8,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
@@ -33,11 +34,16 @@
       <nav id="nav-menu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="stories.html">Stories</a></li>
+          <li class="dropdown">
+            <a href="about.html" class="dropdown-toggle">Who We Are <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="about.html#achievements">Achievements</a></li>
+              <li><a href="stories.html">Stories</a></li>
+            </ul>
+          </li>
           <li><a href="getinvolved.html">Get Involved</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
@@ -48,53 +54,81 @@
       </div>
     </div>
   </header>
-  <section class="hero">
-    <img src="advayapictures/hero.jpeg" alt="Hero" class="hero-bg">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Bridging Educational <br> Gaps</h1>
-      <p>Providing quality education, nutrition, and healthcare since 2020</p>
-      <a href="donate.html" class="hero-btn">Support Us <i class="fas fa-arrow-right"></i></a>
-
-      <div class="carousel-indicators">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS SECTION (from Image 1) -->
-  <section class="stats-section">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h2><span class="count-up" data-target="535">0</span>+</h2>
-          <p>Children Impacted</p>
-        </div>
-        <div class="stat-item">
-          <h2><span class="count-up" data-target="300">0</span>+</h2>
-          <p>Bridged to Schools</p>
-        </div>
-        <div class="stat-item">
-          <h2><span class="count-up" data-target="6000">0</span>+</h2>
-          <p>Educational Kits Distributed</p>
-        </div>
-        <div class="stat-item">
-          <h2><span class="count-up" data-target="121">0</span></h2>
-          <p>Children Receiving Daily Meals</p>
-        </div>
-        <div class="stat-item">
-          <h2><span class="count-up" data-target="13">0</span></h2>
-          <p>Medical Camps Conducted</p>
-        </div>
-        <div class="stat-item">
-          <h2><span class="count-up" data-target="5">0</span></h2>
-          <p>Years of Service</p>
+  <section class="hero-carousel">
+    <!-- Slide 1: Feed One Feed All -->
+    <div class="hero-slide active" style="background-image: url('advayapictures/DSC07429.JPG');">
+      <div class="slide-overlay gradient-purple"></div>
+      <div class="container slide-container">
+        <div class="slide-content centered-content">
+          <div class="slide-text">
+            <h1 class="accent-title">Feed One <span class="highlight-yellow">Feed All</span></h1>
+            <div class="sub-text-box">
+              <p>Building a Brighter Future with Healthy Meal</p>
+            </div>
+            <a href="donate.html" class="hero-cta-btn">Donate Now</a>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Slide 2: Empowering Women -->
+    <div class="hero-slide" style="background-image: url('advayapictures/DSC06903.JPG');">
+      <div class="slide-overlay gradient-purple"></div>
+      <div class="container slide-container">
+        <div class="slide-content centered-content">
+          <div class="slide-text">
+            <h1 class="accent-title">Empowering <span class="highlight-yellow">Women</span></h1>
+            <div class="sub-text-box">
+              <p>Creating Sustainable Livelihoods for a Stronger Community</p>
+            </div>
+            <a href="getinvolved.html" class="hero-cta-btn">Support Women</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Quality Education -->
+    <div class="hero-slide" style="background-image: url('advayapictures/DSC06869.JPG');">
+      <div class="slide-overlay gradient-purple"></div>
+      <div class="container slide-container">
+        <div class="slide-content centered-content">
+          <div class="slide-text">
+            <h1 class="accent-title">Quality <span class="highlight-yellow">Education</span></h1>
+            <div class="sub-text-box">
+              <p>Every Child Deserves the Chance to Learn and Grow</p>
+            </div>
+            <a href="education-support.html" class="hero-cta-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Community Care -->
+    <div class="hero-slide" style="background-image: url('advayapictures/DSC07186.JPG');">
+      <div class="slide-overlay gradient-purple"></div>
+      <div class="container slide-container">
+        <div class="slide-content centered-content">
+          <div class="slide-text">
+            <h1 class="accent-title">Community <span class="highlight-yellow">Care</span></h1>
+            <div class="sub-text-box">
+              <p>Health, Hygiene, and Support for Every Village</p>
+            </div>
+            <a href="contact.html" class="hero-cta-btn">Join Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="carousel-nav">
+      <button class="nav-btn prev-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+      <button class="nav-btn next-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+
   </section>
+
+
 
   <!-- FOCUS AREAS (from Image 1 - Colorful Cards) -->
   <section class="focus-section">
@@ -114,7 +148,6 @@
             <h3>Education Support</h3>
             <p>Quality education programs for underprivileged children.</p>
             <div class="card-footer">
-              <span class="tag"><span class="count-up" data-target="535">0</span>+ children</span>
               <i class="fas fa-arrow-right arrow-icon"></i>
             </div>
           </div>
@@ -129,7 +162,6 @@
             <h3>Nutrition Program</h3>
             <p>Balanced daily meals for healthy growth and learning.</p>
             <div class="card-footer">
-              <span class="tag"><span class="count-up" data-target="121">0</span> daily meals</span>
               <i class="fas fa-arrow-right arrow-icon"></i>
             </div>
           </div>
@@ -144,7 +176,6 @@
             <h3>Healthcare Access</h3>
             <p>Medical camps and health support for children.</p>
             <div class="card-footer">
-              <span class="tag"><span class="count-up" data-target="13">0</span> medical camps</span>
               <i class="fas fa-arrow-right arrow-icon"></i>
             </div>
           </div>
@@ -159,7 +190,36 @@
             <h3>Mobile School</h3>
             <p>Bringing education to remote settlements.</p>
             <div class="card-footer">
-              <span class="tag"><span class="count-up" data-target="100">0</span>+ children reached</span>
+              <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Community Development (Purple) -->
+        <a href="getinvolved.html" class="focus-card purple-card">
+          <img src="advayapictures/DSC07186.JPG" class="card-bg-img">
+          <div class="card-overlay highlight-purple"></div>
+          <div class="card-content">
+            <div class="icon-circle"><i class="fas fa-users"></i></div>
+            <h3>Community Development</h3>
+            <p>Empowering villages through sustainable growth.</p>
+            <div class="card-footer">
+              <span class="tag"><span class="count-up" data-target="2000000">0</span>+ Impacted</span>
+              <i class="fas fa-arrow-right arrow-icon"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Women Empowerment (Teal) -->
+        <a href="getinvolved.html" class="focus-card teal-card">
+          <img src="advayapictures/DSC06903.JPG" class="card-bg-img">
+          <div class="card-overlay highlight-teal"></div>
+          <div class="card-content">
+            <div class="icon-circle"><i class="fas fa-female"></i></div>
+            <h3>Women Empowerment</h3>
+            <p>Fostering gender equality and independence.</p>
+            <div class="card-footer">
+              <span class="tag">Gender Equality</span>
               <i class="fas fa-arrow-right arrow-icon"></i>
             </div>
           </div>
@@ -200,74 +260,160 @@
     </div>
   </section>
 
-  <!-- PROGRAMS SECTION (from Image 2 - Whites Cards) -->
-  <section class="programs-section">
+  <!-- FOOTPRINTS SECTION -->
+  <section class="footprints-section">
     <div class="container">
       <div class="section-header">
-        <h2>Our Programs</h2>
-        <p>Comprehensive support programs designed to empower children through education, nutrition, and healthcare</p>
+        <h2>Our Footprints</h2>
       </div>
+      <div class="footprints-content">
+        <div class="footprints-text">
+          <p>Our holistic approach helps us to address the issues faced by children and women and amplify our impact.
+            For over a decade, we have been serving humanity through our diverse programs that promote quality
+            education, village development, sustainable livelihoods, orphanage support, WASH, disaster relief, and
+            preparedness.</p>
+          <p>We have consistently and transparently improved the lives of more than 11,67,606 people so far. In
+            collaboration with government and corporate partners, we tackle the complex and interrelated problems of
+            education, health, poverty, and empowerment for lasting and sustainable change.</p>
+          <p>We are currently working in the states of Maharashtra, Karnataka, Delhi, Gujarat, Madhya Pradesh, Andhra
+            Pradesh, Tamil Nadu, Telangana, Goa, and Kerala to make a difference. We aspire to reach more remote areas
+            and impact more than 3 million lives by 2030 and empower marginalized children, women, and communities to
+            advocate for their health, education, protection, and development.</p>
 
-      <div class="programs-grid">
-        <!-- Card 1 -->
-        <a href="education-support.html" class="program-card">
-          <div class="program-img-wrapper">
-            <img src="advayapictures/DSC07133.JPG" alt="Day Care">
-            <div class="program-icon"><i class="fas fa-book-open"></i></div>
+          <div class="footprints-stats">
+            <div class="fp-stat">
+              <h3>14</h3>
+              <p>YEARS</p>
+            </div>
+            <div class="fp-stat">
+              <h3>10</h3>
+              <p>STATES</p>
+            </div>
+            <div class="fp-stat">
+              <h3>1,470,152</h3>
+              <p>LIVES TOUCHED</p>
+            </div>
           </div>
-          <div class="program-content">
-            <h3>Day Care Programme</h3>
-            <p>Nurturing environment for children aged 3-6 years, providing early education.</p>
-            <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
-          </div>
-        </a>
-        <!-- Card 2 -->
-        <a href="education-support.html" class="program-card">
-          <div class="program-img-wrapper">
-            <img src="advayapictures/DSC07091.JPG" alt="Bridging School">
-            <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
-          </div>
-          <div class="program-content">
-            <h3>Bridging School Programme</h3>
-            <p>For children aged 6-14 who have dropped out or never enrolled.</p>
-            <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
-          </div>
-        </a>
-        <!-- Card 3 -->
-        <a href="education-support.html" class="program-card">
-          <div class="program-img-wrapper">
-            <img src="advayapictures/DSC06932 (1).JPG" alt="Evening Study">
-            <div class="program-icon"><i class="fas fa-book-reader"></i></div>
-          </div>
-          <div class="program-content">
-            <h3>Evening Study Centre</h3>
-            <p>Supporting children transitioning to formal schools with homework help.</p>
-            <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
-          </div>
-        </a>
-        <!-- Card 4 -->
-        <a href="mobile-school.html" class="program-card">
-          <div class="program-img-wrapper">
-            <img src="advayapictures/DSC06862.JPG" alt="Mobile School">
-            <div class="program-icon"><i class="fas fa-bus"></i></div>
-          </div>
-          <div class="program-content">
-            <h3>Mobile School Initiative</h3>
-            <p>Bringing education directly to children in slum settlements.</p>
-            <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
-          </div>
-        </a>
+        </div>
+        <div class="footprints-map">
+          <img src="advayapictures/footmap.JPG" alt="Our Footprints Map" class="footmap-img">
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- SDGs SECTION -->
+  <section class="sdg-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our SDGs</h2>
+      </div>
+      <div class="sdg-content">
+        <div class="sdg-text-col">
+          <p>Advaya Education and Charitable Trust is tackling social issues through the lens of the Sustainable
+            Development Goals (SDGs). Our mission focuses on empowering communities and creating a brighter future for
+            all. With every child we educate, every village we rejuvenate, and every life we heal, we're not just
+            changing lives; we're weaving a blend of hope and strength.</p>
+          <p>Our endeavors, particularly in rural areas, have been exceptional in shattering the shackles of poverty and
+            nurturing the seeds of sustainable growth. Our ethics is the very essence of the SDGs—ensuring that no one
+            is forgotten, that every dream is given wings, and that the future is bright and inclusive for all.</p>
+          <p>Our unwavering commitment to these goals has undoubtedly contributed to our success. Our hearts beat in
+            sync with goals such as No Poverty (SDG 1), Zero Hunger (SDG 2), Good Health and Well-being (SDG 3), Quality
+            Education (SDG 4), Gender Equality (SDG 5), Clean Water and Sanitation (SDG 6), Affordable and Clean Energy
+            (SDG 7), Decent Work and Economic Growth (SDG 8), Reduced Inequalities (SDG 10), Climate Action (SDG 13),
+            and Partnerships for the Goals (SDG 17).</p>
+        </div>
+        <div class="sdg-wheel-col">
+          <!-- Placeholder for SDG Wheel -->
+          <div class="wheel-placeholder">
+            <i class="fas fa-circle-notch fa-spin"></i>
+            <p>Sustainable Development Goals</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sdg-stats-row">
+        <div class="sdg-stat-item">
+          <i class="fas fa-child"></i>
+          <h3>158566</h3>
+          <p>Child Welfare and Development</p>
+        </div>
+        <div class="sdg-stat-item">
+          <i class="fas fa-female"></i>
+          <h3>221114</h3>
+          <p>Livelihood & Women Empowerment</p>
+        </div>
+        <div class="sdg-stat-item">
+          <i class="fas fa-hands-wash"></i>
+          <h3>270505</h3>
+          <p>WASH Impact</p>
+        </div>
+        <div class="sdg-stat-item">
+          <i class="fas fa-heartbeat"></i>
+          <h3>196772</h3>
+          <p>Strengthening Health</p>
+        </div>
+        <div class="sdg-stat-item">
+          <i class="fas fa-bullhorn"></i>
+          <h3>320649</h3>
+          <p>Campaigns & Activities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDEOLOGIES SECTION -->
+  <section class="ideologies-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="ideology-title">Forging a brighter future with our ideologies</h2>
+      </div>
+      <div class="ideology-grid">
+        <div class="ideology-item">
+          <div class="ideology-icon-wrapper">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Goal</h3>
+          <p>Create an inclusive ecosystem for equal opportunities through collaboration.</p>
+        </div>
+        <div class="ideology-item">
+          <div class="ideology-icon-wrapper">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Belief</h3>
+          <p>Ensure children grow, not just survive, with bright futures.</p>
+        </div>
+        <div class="ideology-item">
+          <div class="ideology-icon-wrapper">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3>Values</h3>
+          <p>Transparency and accountability builds trust and honesty.</p>
+        </div>
+        <div class="ideology-item">
+          <div class="ideology-icon-wrapper">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Philosophy</h3>
+          <p>Equal access to rights, celebrating diversity, and full potential.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
   <!-- CTA -->
-  <section class="impact-section" style="margin-top:0;">
-    <div class="hero-overlay" style="z-index: 0; background: var(--impact-gradient);"></div>
+  <section class="impact-section"
+    style="margin-top:0; background-image: url('advayapictures/DSC06903.JPG'); background-size: cover; background-position: center;">
+    <div class="hero-overlay" style="z-index: 0; background: rgba(76, 29, 149, 0.85);"></div>
     <div class="container" style="position: relative; z-index: 2;">
       <div class="impact-header">
         <h2>Join Our Mission</h2>
-        <p>Your support can light up a child's future today.</p>
+        <p>Together, we can create a brighter future.</p>
       </div>
       <a href="donate.html" class="hero-btn" style="background:var(--primary-main); color:white;">Donate Now</a>
     </div>
