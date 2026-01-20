@@ -202,7 +202,7 @@ function currentSlide(n) {
 
 function resetInterval() {
   clearInterval(slideInterval);
-  slideInterval = setInterval(nextSlide, 5000);
+  slideInterval = setInterval(nextSlide, 3000);
 }
 
 // Initialize Carousel
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Re-select in case of dom load consistency
     const slides = document.querySelectorAll('.hero-slide');
     showSlide(0);
-    slideInterval = setInterval(nextSlide, 5000);
+    slideInterval = setInterval(nextSlide, 3000);
   }
 });
 
