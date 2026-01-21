@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -319,7 +319,7 @@
                             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
                         </ul>
                     </li>
-                    <li><a href="programs.html">Programs</a></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li><li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li></ul></li>
                     <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -367,23 +367,23 @@
                     <div class="amount-grid">
                         <div class="amount-card" onclick="selectAmount(500, this)">
                             <i class="fas fa-check-circle check-icon"></i>
-                            <h3>₹ 500</h3>
+                            <h3>â‚¹ 500</h3>
                             <p>One Month of Educational Materials</p>
                         </div>
                         <div class="amount-card active" onclick="selectAmount(1000, this)">
                             <i class="fas fa-check-circle check-icon"></i>
-                            <h3>₹ 1,000</h3>
+                            <h3>â‚¹ 1,000</h3>
                             <p>Nutrition & Meals for One Child / Month</p>
                         </div>
                         <div class="amount-card" onclick="selectAmount(5000, this)">
                             <i class="fas fa-check-circle check-icon"></i>
-                            <h3>₹ 5,000</h3>
+                            <h3>â‚¹ 5,000</h3>
                             <p>Sponsor a Child's Education for a Term</p>
                         </div>
                     </div>
 
                     <div class="custom-amount-wrapper">
-                        <span class="currency-symbol">₹</span>
+                        <span class="currency-symbol">â‚¹</span>
                         <input type="number" id="customAmount" class="custom-amount-input"
                             placeholder="Enter Custom Amount" oninput="updateFormAmount(this.value)">
                     </div>
@@ -440,7 +440,7 @@
                             <label class="input-label">PHONE NUMBER</label>
                             <input type="tel" id="phone" class="premium-input" placeholder="+91" required>
 
-                            <label class="input-label">DONATION AMOUNT (₹)</label>
+                            <label class="input-label">DONATION AMOUNT (â‚¹)</label>
                             <input type="number" id="amount" class="premium-input" value="1000" readonly
                                 style="font-weight: 800; color: var(--primary-main); font-size: 1.2rem;">
 
@@ -482,7 +482,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="programs.html">Programs</a></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li><li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li></ul></li>
                     <li><a href="stories.html">Stories</a></li>
                     <li><a href="getinvolved.html">Get Involved</a></li>
                     <li><a href="contact.html">Contact Us</a></li>

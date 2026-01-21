@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,7 +44,7 @@
                             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
                         </ul>
                     </li>
-                    <li><a href="programs.html">Programs</a></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li><li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li></ul></li>
                     <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -79,81 +79,113 @@
         <div class="container">
             <div class="programs-grid">
 
-                <!-- Card 1 -->
+                <!-- 1. Education Support Program -->
                 <div class="program-card">
                     <div class="program-img-wrapper">
-                        <img src="advayapictures/DSC07133.JPG" alt="Day Care">
-                        <div class="program-icon"><i class="fas fa-book-open"></i></div>
+                        <img src="advayapictures/DSC06869.JPG" alt="Education Support">
+                        <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
                     </div>
                     <div class="program-content">
-                        <h3>Day Care Programme</h3>
-                        <p>Nurturing environment for children aged 3-6 years, providing early childhood education and
-                            freeing older siblings to attend school.</p>
+                        <h3>Education Support Program</h3>
+                        <p>Provides academic support, school admissions, tuition assistance, and learning materials for
+                            migrant and underprivileged children. The program focuses on foundational literacy,
+                            numeracy, and holistic child development to prevent school dropouts.</p>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- 2. Bridge School Program -->
                 <div class="program-card">
                     <div class="program-img-wrapper">
-                        <img src="advayapictures/DSC07118.JPG" alt="Nutrition">
+                        <img src="advayapictures/DSC07133.JPG" alt="Bridge School">
+                        <div class="program-icon"><i class="fas fa-school"></i></div>
+                    </div>
+                    <div class="program-content">
+                        <h3>Bridge School Program</h3>
+                        <p>Designed for children aged 6â€“14 who have dropped out or never attended school. The bridge
+                            school prepares children academically and emotionally before enrolling them into formal
+                            schools through activity-based and joyful learning methods.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Day Care Program -->
+                <div class="program-card">
+                    <div class="program-img-wrapper">
+                        <img src="advayapictures/DSC07426.JPG" alt="Day Care">
+                        <div class="program-icon"><i class="fas fa-child"></i></div>
+                    </div>
+                    <div class="program-content">
+                        <h3>Day Care Program</h3>
+                        <p>Supports children aged 3â€“6 years by providing a safe, nurturing environment that promotes
+                            early childhood development. This program also enables elder siblings, especially girls, to
+                            continue their education without caregiving burdens.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Evening Study Centre -->
+                <div class="program-card">
+                    <div class="program-img-wrapper">
+                        <img src="advayapictures/DSC07121.JPG" alt="Evening Study Centre">
+                        <div class="program-icon"><i class="fas fa-book-reader"></i></div>
+                    </div>
+                    <div class="program-content">
+                        <h3>Evening Study Centre</h3>
+                        <p>Supports children enrolled in formal schools by offering after-school academic assistance,
+                            homework support, concept clarification, and exam preparation to ensure retention and
+                            academic success.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Mobile School Program -->
+                <div class="program-card">
+                    <div class="program-img-wrapper">
+                        <img src="advayapictures/DSC06862.JPG" alt="Mobile School">
+                        <div class="program-icon"><i class="fas fa-bus"></i></div>
+                    </div>
+                    <div class="program-content">
+                        <h3>Mobile School Program</h3>
+                        <p>Brings education directly to children living in slums and makeshift settlements where access
+                            to schools is limited. Temporary classrooms are set up within communities to ensure
+                            inclusive and accessible learning.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Nutrition Program -->
+                <div class="program-card">
+                    <div class="program-img-wrapper">
+                        <img src="advayapictures/DSC07429.JPG" alt="Nutrition">
                         <div class="program-icon"><i class="fas fa-utensils"></i></div>
                     </div>
                     <div class="program-content">
-                        <h3>Nutrition Support</h3>
-                        <p>Providing daily nutritious meals to tackle malnutrition and ensure healthy physical
-                            development for children in slums.</p>
+                        <h3>Nutrition Program</h3>
+                        <p>Ensures children receive daily nutritious meals and snacks to combat hunger and malnutrition.
+                            The program improves attendance, concentration, and overall well-being, recognizing that a
+                            well-fed child learns better.</p>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- 7. Healthcare & Health Awareness -->
                 <div class="program-card">
                     <div class="program-img-wrapper">
                         <img src="advayapictures/DSC07098.JPG" alt="Healthcare">
                         <div class="program-icon"><i class="fas fa-heartbeat"></i></div>
                     </div>
                     <div class="program-content">
-                        <h3>Healthcare Access</h3>
-                        <p>Regular medical camps, dental checkups, and health awareness sessions for children and their
-                            families.</p>
+                        <h3>Healthcare & Health Awareness Program</h3>
+                        <p>Provides regular medical camps, BMI tracking, hygiene education, menstrual health support,
+                            dental and eye check-ups, and follow-up medical care for children and their families.</p>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <a href="mobile-school.html" class="program-card">
-                    <div class="program-img-wrapper">
-                        <img src="advayapictures/DSC06862.JPG" alt="Mobile School">
-                        <div class="program-icon"><i class="fas fa-bus"></i></div>
-                    </div>
-                    <div class="program-content">
-                        <h3>Mobile School</h3>
-                        <p>A school on wheels enabling us to reach the most remote settlements and bring education to
-                            the doorstep.</p>
-                    </div>
-                </a>
-
-                <!-- Card 5 (Extra) -->
+                <!-- 8. Community Outreach -->
                 <div class="program-card">
                     <div class="program-img-wrapper">
-                        <img src="advayapictures/DSC07121.JPG" alt="Skill Development">
-                        <div class="program-icon"><i class="fas fa-laptop-code"></i></div>
+                        <img src="advayapictures/DSC06903.JPG" alt="Community Outreach">
+                        <div class="program-icon"><i class="fas fa-users"></i></div>
                     </div>
                     <div class="program-content">
-                        <h3>Digital Literacy</h3>
-                        <p>Introducing computer skills to older children to bridge the digital divide and open up future
-                            career opportunities.</p>
-                    </div>
-                </div>
-
-                <!-- Card 6 (Extra) -->
-                <div class="program-card">
-                    <div class="program-img-wrapper">
-                        <img src="advayapictures/DSC07426.JPG" alt="Women Empowerment">
-                        <div class="program-icon"><i class="fas fa-female"></i></div>
-                    </div>
-                    <div class="program-content">
-                        <h3>Women Empowerment</h3>
-                        <p>Supporting mothers through vocational training and self-help groups to ensure sustainable
-                            household income.</p>
+                        <h3>Community Outreach & Awareness Programs</h3>
+                        <p>Engages parents and communities through awareness sessions on education, hygiene, health, and
+                            child rights, strengthening long-term community participation and support.</p>
                     </div>
                 </div>
 
@@ -184,7 +216,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="programs.html">Programs</a></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li><li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li></ul></li>
                     <li><a href="stories.html">Stories</a></li>
                     <li><a href="getinvolved.html">Get Involved</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
