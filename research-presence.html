@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reach & Presence | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .presence-hero {
+            background: linear-gradient(135deg, rgba(76, 29, 149, 0.9) 0%, rgba(124, 58, 237, 0.85) 100%), url('advayapictures/DSC06966.JPG');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+
+        .presence-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .presence-hero p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .presence-section {
+            padding: 80px 20px;
+        }
+
+        .presence-section:nth-child(even) {
+            background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+        }
+
+        .presence-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .presence-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .presence-title i {
+            font-size: 1.5rem;
+            color: var(--primary-main);
+        }
+
+        .presence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .presence-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .presence-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .presence-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .presence-card ul {
+            padding-left: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .presence-card li {
+            margin-bottom: 8px;
+        }
+
+        .presence-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .stat-highlight {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            min-width: 180px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .region-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .region-tag {
+            background: var(--primary-main);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .impact-text {
+            background: linear-gradient(135deg, #4c1d95 0%, #5b21b6 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .impact-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu"><ul><li><a href="index.html">Home</a></li><li class="dropdown"><a href="about.html" class="dropdown-toggle">Who We Are <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li class="nested-dropdown"><a href="about.html"><i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-right"></i></a><ul class="nested-menu"><li><a href="about.html#vision-mission">Vision & Mission</a></li><li><a href="journey.html">Journey</a></li><li><a href="research-presence.html">Research & Presence</a></li></ul></li><li><a href="stories.html"><i class="fas fa-book-open"></i> Stories</a></li><li><a href="about.html#achievements"><i class="fas fa-trophy"></i> Achievements</a></li></ul></li><li><a href="programs.html">Programs</a></li><li><a href="getinvolved.html">Get Involved</a></li></ul></nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="presence-hero">
+        <h1>Reach & Presence</h1>
+        <p>Advaya Educational and Charitable Trust works at the grassroots level to support migrant and underserved
+            communities, primarily in Bengaluru, with a growing impact across multiple regions through migrant families.
+        </p>
+    </section>
+
+    <!-- GEOGRAPHICAL PRESENCE -->
+    <section class="presence-section">
+        <div class="presence-container">
+            <h2 class="presence-title"><i class="fas fa-map-marker-alt"></i> Geographical Presence</h2>
+
+            <div class="presence-grid">
+                <div class="presence-card">
+                    <h3>Primary Location</h3>
+                    <p><strong>Bengaluru, Karnataka</strong> – KR Puram & nearby settlements</p>
+                    <p style="margin-top: 15px;">Advaya reaches children living in slums, construction sites, and
+                        makeshift tarpaulin settlements, where access to education, nutrition, and healthcare is
+                        limited.</p>
+                </div>
+
+                <div class="presence-card">
+                    <h3>Migrant Families From</h3>
+                    <div class="region-list">
+                        <span class="region-tag">Uttar Pradesh</span>
+                        <span class="region-tag">Bihar</span>
+                        <span class="region-tag">West Bengal</span>
+                        <span class="region-tag">Odisha</span>
+                        <span class="region-tag">Yadgiri (North Karnataka)</span>
+                        <span class="region-tag">Nepal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO WE REACH -->
+    <section class="presence-section">
+        <div class="presence-container">
+            <h2 class="presence-title"><i class="fas fa-users"></i> Who We Reach</h2>
+
+            <div class="stat-highlight">
+                <div class="stat-box">
+                    <div class="stat-number">538+</div>
+                    <div class="stat-label">Children Supported (5 Years)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">121</div>
+                    <div class="stat-label">Daily Education & Nutrition</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">3-14</div>
+                    <div class="stat-label">Age Range (Years)</div>
+                </div>
+            </div>
+
+            <div class="presence-grid" style="margin-top: 40px;">
+                <div class="presence-card">
+                    <h3>Our Beneficiaries</h3>
+                    <ul>
+                        <li>Migrant & first-generation learners</li>
+                        <li>Girls and boys from marginalized communities</li>
+                        <li>Children aged 3–14 years</li>
+                        <li>Daycare, bridge school, and study centre students</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM REACH -->
+    <section class="presence-section">
+        <div class="presence-container">
+            <h2 class="presence-title"><i class="fas fa-school"></i> Program Reach</h2>
+
+            <div class="presence-grid">
+                <div class="presence-card">
+                    <h3>Our Programs</h3>
+                    <ul>
+                        <li>Education Support Program</li>
+                        <li>Bridge School Program</li>
+                        <li>Day Care Centres (3–6 years)</li>
+                        <li>Evening Study Centres</li>
+                        <li>Mobile School Initiative</li>
+                        <li>Nutrition Program</li>
+                        <li>Healthcare & Medical Camps</li>
+                    </ul>
+                </div>
+
+                <div class="presence-card">
+                    <h3>Through These Programs</h3>
+                    <ul>
+                        <li><strong>300+</strong> children admitted to formal schools</li>
+                        <li><strong>95</strong> children reached via Mobile School</li>
+                        <li><strong>6,000+</strong> education kits distributed</li>
+                        <li><strong>100,000+</strong> meals served</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY PRESENCE -->
+    <section class="presence-section">
+        <div class="presence-container">
+            <h2 class="presence-title"><i class="fas fa-handshake"></i> Community & Institutional Presence</h2>
+
+            <div class="presence-grid">
+                <div class="presence-card">
+                    <h3>Active Collaboration With</h3>
+                    <ul>
+                        <li>Local communities & parents</li>
+                        <li>NGOs and social organizations</li>
+                        <li>Corporate and institutional partners</li>
+                    </ul>
+                </div>
+
+                <div class="presence-card">
+                    <h3>Our Support System</h3>
+                    <ul>
+                        <li>Supported by <strong>30+ individual donors</strong> annually</li>
+                        <li>Backed by volunteers, educators, healthcare professionals, and partners</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT FOOTPRINT -->
+    <section class="presence-section">
+        <div class="presence-container">
+            <h2 class="presence-title"><i class="fas fa-chart-line"></i> Impact Footprint</h2>
+
+            <div class="stat-highlight">
+                <div class="stat-box">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years of Continuous Presence</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">1,700+</div>
+                    <div class="stat-label">Healthcare Access (Children & Parents)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">Multiple</div>
+                    <div class="stat-label">Slum Clusters Served</div>
+                </div>
+            </div>
+
+            <div class="impact-text">
+                <p><strong>Sustained engagement, not one-time intervention.</strong><br>Since 2020, we've maintained a
+                    continuous presence in migrant communities, building trust and creating lasting change.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section"
+        style="background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); color: white; padding: 80px 20px; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Expand Our Reach Together</h2>
+        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.9;">Help us reach more children
+            and communities who need our support.</p>
+        <a href="donate.html" class="nav-donate-btn"
+            style="background: white; color: #4c1d95; padding: 15px 40px; font-size: 1.1rem;">Donate Now</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-brand">
+                <h3>Advaya Trust</h3>
+                <p>Empowering underprivileged children through education, nutrition, and healthcare since 2020.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> advayatrust@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Advaya Educational and Charitable Trust. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+

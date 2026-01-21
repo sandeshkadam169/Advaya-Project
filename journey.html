@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .journey-hero {
+            background: linear-gradient(135deg, rgba(76, 29, 149, 0.9) 0%, rgba(124, 58, 237, 0.85) 100%), url('advayapictures/DSC06929.JPG');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+
+        .journey-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .journey-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .anniversary-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: #fdfbff;
+        }
+
+        .anniversary-image {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .anniversary-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .anniversary-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #b8860b;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .journey-story {
+            background: linear-gradient(135deg, #4c1d95 0%, #5b21b6 100%);
+            color: white;
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 900px;
+            border-radius: 20px;
+        }
+
+        .journey-story p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .journey-story strong {
+            color: #fbbf24;
+        }
+
+        .milestone-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+        }
+
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto 0;
+        }
+
+        .milestone-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .milestone-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .milestone-year {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .milestone-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-main);
+            margin-bottom: 15px;
+        }
+
+        .milestone-desc {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .impact-numbers {
+            padding: 80px 20px;
+            background: white;
+            text-align: center;
+        }
+
+        .impact-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 50px auto 0;
+        }
+
+        .impact-item {
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu"><ul><li><a href="index.html">Home</a></li><li class="dropdown"><a href="about.html" class="dropdown-toggle">Who We Are <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li class="nested-dropdown"><a href="about.html"><i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-right"></i></a><ul class="nested-menu"><li><a href="about.html#vision-mission">Vision & Mission</a></li><li><a href="journey.html">Journey</a></li><li><a href="research-presence.html">Research & Presence</a></li></ul></li><li><a href="stories.html"><i class="fas fa-book-open"></i> Stories</a></li><li><a href="about.html#achievements"><i class="fas fa-trophy"></i> Achievements</a></li></ul></li><li><a href="programs.html">Programs</a></li><li><a href="getinvolved.html">Get Involved</a></li></ul></nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- JOURNEY HERO -->
+    <section class="journey-hero">
+        <h1>Our Journey</h1>
+        <p>Advaya Educational and Charitable Trust began its journey in 2020 with a simple but powerful vision — to
+            support children from migrant and marginalized communities who were denied access to basic education,
+            nutrition, and care.</p>
+    </section>
+
+    <!-- ANNIVERSARY SECTION -->
+    <section class="anniversary-section">
+        <div class="anniversary-image">
+            <img src="advayapictures/5years.JPG" alt="5 Years Anniversary">
+        </div>
+        <h2 class="anniversary-title">Celebrating 5 Years of Making a Difference</h2>
+
+        <div class="journey-story">
+            <p>We proudly celebrate five meaningful years of service, learning, and transformation at Advaya Educational
+                and Charitable Trust, since our humble beginning in 2020. What started with just four children under a
+                tarpaulin sheet has now grown into a nurturing space for over <strong>538 children</strong> from migrant
+                and underprivileged backgrounds.</p>
+
+            <p>This journey has been full of challenges, growth, and countless small victories — made possible by the
+                collective spirit of compassion and commitment.</p>
+
+            <p>Our mission has always been clear: to restore childhoods and build futures for children who are often
+                left out of the mainstream due to poverty, migration, or social barriers. Over the years, we've provided
+                quality education, nutrition, and a safe environment to children living in makeshift homes, helping them
+                take their first steps towards a life of dignity and opportunity.</p>
+
+            <p>This milestone is not ours alone. <strong>It is because of generous supporters like you that we've been
+                    able to transform adversity into hope.</strong> Your faith in us has helped us bridge learning gaps,
+                fight malnutrition, and bring joy to the lives of those who had no access to basic rights.</p>
+        </div>
+    </section>
+
+    <!-- MILESTONES -->
+    <section class="milestone-section">
+        <div class="section-header">
+            <h2>Key Milestones</h2>
+            <p>Moments that defined our journey.</p>
+        </div>
+
+        <div class="milestone-grid">
+            <div class="milestone-card">
+                <div class="milestone-year">2020</div>
+                <div class="milestone-title">The Beginning</div>
+                <ul class="milestone-desc">
+                    <li>Started with just 4 children, learning under a tarpaulin sheet</li>
+                    <li>Focused on basic education and daily meals</li>
+                    <li>Worked closely with migrant families living in makeshift settlements in Bengaluru</li>
+                </ul>
+            </div>
+
+            <div class="milestone-card">
+                <div class="milestone-year">2021</div>
+                <div class="milestone-title">Building Trust & Continuity</div>
+                <ul class="milestone-desc">
+                    <li>Continued education and nutrition support during COVID-19 pandemic</li>
+                    <li>Introduced health check-ups, hygiene awareness, and relief support</li>
+                    <li>Strengthened community relationships despite severe challenges</li>
+                </ul>
+            </div>
+
+            <div class="milestone-card">
+                <div class="milestone-year">2022</div>
+                <div class="milestone-title">Expanding Impact</div>
+                <ul class="milestone-desc">
+                    <li>Formalized Education Support Program</li>
+                    <li>Introduced Bridge School & Day Care programs</li>
+                    <li>Began enrolling children into formal schools for the first time</li>
+                    <li>Nutrition program scaled to ensure no child studied hungry</li>
+                </ul>
+            </div>
+
+            <div class="milestone-card">
+                <div class="milestone-year">2023</div>
+                <div class="milestone-title">Reaching the Unreached</div>
+                <ul class="milestone-desc">
+                    <li>Launched the Mobile School Initiative to reach children in slums</li>
+                    <li>Expanded Evening Study Centre for school-going children</li>
+                    <li>Conducted multiple health camps, dental & eye check-ups</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2024 and 2025 - Centered Row -->
+        <div class="milestone-grid" style="max-width: 700px; margin: 30px auto 0;">
+            <div class="milestone-card">
+                <div class="milestone-year">2024</div>
+                <div class="milestone-title">Strengthening Outcomes</div>
+                <ul class="milestone-desc">
+                    <li>Supported 538+ children cumulatively</li>
+                    <li>Distributed 6,000+ education kits</li>
+                    <li>Empowered 320+ girls through education and care kits</li>
+                    <li>Helped 27% children move out of malnutrition</li>
+                    <li>Strengthened partnerships with NGOs, corporates, and donors</li>
+                </ul>
+            </div>
+
+            <div class="milestone-card">
+                <div class="milestone-year">2025</div>
+                <div class="milestone-title">Looking Ahead</div>
+                <ul class="milestone-desc">
+                    <li>Supporting 121 children daily with education and nutrition</li>
+                    <li>Scaling programs to new communities</li>
+                    <li>Strengthening systems, transparency, and team capacity</li>
+                    <li>Continuing the mission to restore childhoods</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT NUMBERS -->
+    <section class="impact-numbers">
+        <div class="section-header">
+            <h2>Journey at a Glance</h2>
+            <p>What we've achieved together.</p>
+        </div>
+
+        <div class="impact-grid">
+            <div class="impact-item">
+                <div class="impact-number">538+</div>
+                <div class="impact-label">Children Impacted</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number">100,000+</div>
+                <div class="impact-label">Meals Served</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number">300+</div>
+                <div class="impact-label">School Admissions</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number">5+</div>
+                <div class="impact-label">Years of Impact</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section"
+        style="background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); color: white; padding: 80px 20px; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Be Part of Our Next Chapter</h2>
+        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.9;">Join us as we continue to
+            transform lives and build futures for underprivileged children.</p>
+        <a href="donate.html" class="nav-donate-btn"
+            style="background: white; color: #4c1d95; padding: 15px 40px; font-size: 1.1rem;">Donate Now</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-brand">
+                <h3>Advaya Trust</h3>
+                <p>Empowering underprivileged children through education, nutrition, and healthcare since 2020.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> advayatrust@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Advaya Educational and Charitable Trust. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
