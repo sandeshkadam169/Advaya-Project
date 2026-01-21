@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .achievements-hero {
+            background: linear-gradient(135deg, rgba(76, 29, 149, 0.9) 0%, rgba(124, 58, 237, 0.85) 100%), url('advayapictures/A1.JPG');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+
+        .achievements-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .achievements-hero p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .achievement-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            /* Height removed to allow image to dictate height */
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .achievement-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .achievement-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .achievement-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .achievement-card:hover .achievement-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown"><a href="about.html" class="dropdown-toggle">Who We Are <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="nested-dropdown"><a href="about.html"><i class="fas fa-info-circle"></i> About Us
+                                    <i class="fas fa-chevron-right"></i></a>
+                                <ul class="nested-menu">
+                                    <li><a href="about.html#vision-mission">Vision & Mission</a></li>
+                                    <li><a href="journey.html">Journey</a></li>
+                                    <li><a href="research-presence.html">Research & Presence</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="stories.html"><i class="fas fa-book-open"></i> Stories</a></li>
+                            <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
+                            <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="achievements-hero">
+        <h1>Our Achievements</h1>
+        <p>Celebrating milestones and recognition in our journey to empower communities.</p>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="achievements-grid">
+        <div class="achievement-card">
+            <img src="advayapictures/A3.JPG" alt="Achievement 3">
+        </div>
+        <div class="achievement-card">
+            <img src="advayapictures/A4.JPG" alt="Achievement 4">
+        </div>
+        <div class="achievement-card">
+            <img src="advayapictures/A5.JPG" alt="Achievement 5">
+        </div>
+        <div class="achievement-card">
+            <img src="advayapictures/A6.JPG" alt="Achievement 6">
+        </div>
+        <div class="achievement-card">
+            <img src="advayapictures/A7.JPG" alt="Achievement 7">
+        </div>
+        <div class="achievement-card">
+            <img src="advayapictures/A8.JPG" alt="Achievement 8">
+        </div>
+        <div class="achievement-card">
+            <img src="advayapictures/A9.JPG" alt="Achievement 9">
+        </div>
+        <div class="achievement-card">
+            <img src="advayapictures/A1.JPG" alt="Achievement 1">
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section"
+        style="background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%); color: white; padding: 80px 20px; text-align: center;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px;">Support Our Mission</h2>
+        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; opacity: 0.9;">Help us achieve more
+            milestones in transforming lives.</p>
+        <a href="donate.html" class="nav-donate-btn"
+            style="background: white; color: #4c1d95; padding: 15px 40px; font-size: 1.1rem;">Donate Now</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-brand">
+                <h3>Advaya Trust</h3>
+                <p>Empowering underprivileged children through education, nutrition, and healthcare since 2020.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> advayatrust@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Advaya Educational and Charitable Trust. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
