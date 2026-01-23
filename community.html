@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Development | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .community-content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 992px) {
+            .community-content-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .community-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.05) 0%, rgba(200, 75, 49, 0.05) 100%);
+            border-left: 5px solid var(--primary-main);
+            padding: 30px;
+            border-radius: var(--radius-md);
+            margin: 30px 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-main);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-main);
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .hero-overlay.purple-tint {
+            background: linear-gradient(rgba(76, 29, 149, 0.8), rgba(76, 29, 149, 0.6));
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown"><a href="about.html" class="dropdown-toggle">Who We Are <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="nested-dropdown"><a href="about.html"><i class="fas fa-info-circle"></i> About Us
+                                    <i class="fas fa-chevron-right"></i></a>
+                                <ul class="nested-menu">
+                                    <li><a href="about.html#vision-mission">Vision & Mission</a></li>
+                                    <li><a href="journey.html">Journey</a></li>
+                                    <li><a href="research-presence.html">Research & Presence</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="stories.html"><i class="fas fa-book-open"></i> Stories</a></li>
+                            <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
+                            <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <img src="advayapictures/DSC07186.JPG" class="page-header-bg" alt="Community Development"
+            style="object-position: top;">
+        <div class="page-header-overlay purple-tint"></div>
+        <div class="page-header-content">
+            <h1>Community Development</h1>
+            <p>Strengthening families and building inclusive communities.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="content-section">
+        <div class="container">
+            <div class="community-content-grid">
+                <div class="community-text">
+                    <h2 style="color: var(--primary-dark); font-weight: 800; font-size: 2.5rem; margin-bottom: 20px;">
+                        Lasting Change Begins at the Community Level</h2>
+                    <p>Advaya Educational and Charitable Trust believes that true empowerment starts from within the
+                        community. Our community development initiatives are designed to focus on strengthening migrant
+                        and marginalized families by creating awareness, building trust, and encouraging active
+                        participation in their children’s education and overall well-being.</p>
+
+                    <p>We work closely with parents and local communities to promote the importance of schooling,
+                        health, hygiene, and child rights. By addressing these fundamental pillars, we help build a
+                        foundation for sustainable growth and development.</p>
+
+                    <div class="highlight-box">
+                        <p style="margin-bottom: 0; font-weight: 500; font-size: 1.2rem; color: var(--primary-main);">
+                            "By fostering inclusive and supportive environments, we aim to empower communities to become
+                            active partners in shaping a safer, healthier, and more dignified future for their
+                            children."</p>
+                    </div>
+
+                    <p>Through regular parent engagement programs, awareness sessions, and outreach activities, Advaya
+                        supports families in navigating the complex challenges related to migration, poverty, and access
+                        to basic services. We strive to ensure that every family has the knowledge and resources they
+                        need to thrive.</p>
+                </div>
+                <div class="community-image">
+                    <img src="advayapictures/DSC07429.JPG" alt="Community Gathering"
+                        style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3 class="feature-title">Parent Engagement</h3>
+                    <p>Regular programs to involve parents in their children's educational journey and decision-making
+                        processes.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bullhorn feature-icon"></i>
+                    <h3 class="feature-title">Awareness Sessions</h3>
+                    <p>Workshops on health, hygiene, child rights, and government schemes to empower families with
+                        knowledge.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hand-holding-heart feature-icon"></i>
+                    <h3 class="feature-title">Inclusive Support</h3>
+                    <p>Creating safe spaces where marginalized families feel heard, respected, and supported in
+                        overcoming poverty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="impact-section" style="margin-top:0;">
+        <div class="hero-overlay" style="z-index: 0; background: var(--impact-gradient);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="impact-header">
+                <h2>Join Us in Building Stronger Communities</h2>
+                <p>Your support can help us reach more families and create lasting change.</p>
+            </div>
+            <a href="donate.html" class="hero-btn" style="background:var(--primary-main); color:white;">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Advaya Trust</h3>
+                <p>Empowering communities, one life at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>advayatrust@gmail.com</p>
+                <p>JMJ Lazarus Park, Kithiganur, K.R Puram, Bengaluru - 560036</p>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div style="display: flex; gap: 15px; margin-top: 10px;">
+                    <a href="https://www.instagram.com/advaya_ngo?igsh=aHpocnA5MmIzMXRz" target="_blank"
+                        style="font-size: 1.5rem; color: white; transition: color 0.3s;"
+                        onmouseover="this.style.color='#E4405F'" onmouseout="this.style.color='white'">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtu.be/v7CZ0QVqHLA?si=BkJRk828NkHmw82v" target="_blank"
+                        style="font-size: 1.5rem; color: white; transition: color 0.3s;"
+                        onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='white'">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
