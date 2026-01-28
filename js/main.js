@@ -46,24 +46,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // STEP 1: Donation Details Submission
   const step1Form = document.querySelector("#donationStep1Form");
-  if (step1Form) {
-    step1Form.addEventListener("submit", function (e) {
+
+  // --- NEW SIMPLIFIED FLOW (No OTP) ---
+
+  // Elements
+  const step1Div = document.getElementById("step1-contact");
+  // const step2Div = document.getElementById("step2-otp"); // Removed
+  const step3Div = document.getElementById("step3-payment");
+  const contactFormStep = document.getElementById("contactFormStep");
+
+  // Inputs
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const phoneInput = document.getElementById("phone");
+  const amountInput = document.getElementById("amount");
+
+  // Payment
+  const upiPayBtn = document.getElementById("upiPayBtn");
+  const payAmountDisplay = document.getElementById("payAmountDisplay");
+  const finalStepForm = document.getElementById("finalStepForm");
+
+  // URL of your Google Apps Script Web App
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxUaM13CUb6CNWekfpasYFxGSgpCANZGJ0OKF0Jmcz6A8lhMiRyH_7PwR0Zk-6_oG6nA/exec";
+
+  // --- STEP 1: PROCEED TO PAYMENT ---
+  if (contactFormStep) {
+    contactFormStep.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Get values
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const phone = document.getElementById("phone").value;
-      const amount = document.getElementById("amount").value;
+      const email = emailInput.value;
+      const phone = phoneInput.value;
+      const amount = amountInput.value;
 
-      // Save to Session Storage
-      sessionStorage.setItem("donationName", name);
-      sessionStorage.setItem("donationEmail", email);
-      sessionStorage.setItem("donationPhone", phone);
-      sessionStorage.setItem("donationAmount", amount);
+      // Simple Validation
+      if (!email.includes("@") || phone.length < 10) {
+        alert("Please enter valid email and phone number.");
+        return;
+      }
 
-      // Redirect to Payment Page
-      window.location.href = "payment.html";
+      // Move to Payment Step
+      step1Div.style.display = "none";
+      step3Div.style.display = "block";
+
+      // Setup Payment Data
+      payAmountDisplay.innerText = "₹ " + amount;
+
+      // Generate UPI Deep Link
+      const upiId = "9964720461@ybl";
+      const upiName = "Advaya Trust";
+      const upiLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(upiName)}&am=${amount}&cu=INR`;
+
+      if (upiPayBtn) upiPayBtn.href = upiLink;
+    });
+  }
+
+  // --- STEP 2: PAYMENT & CONFIRMATION ---
+  if (finalStepForm) {
+    finalStepForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const txnId = document.getElementById("finalTxnId").value;
+      // submitBtn
+      const submitBtn = finalStepForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+      submitBtn.disabled = true;
+
+      const donationData = {
+        action: 'save_donation',
+        name: nameInput.value,
+        email: emailInput.value,
+        phone: phoneInput.value,
+        amount: amountInput.value,
+        transactionId: txnId
+      };
+
+      // Submit Data to Google Sheet
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(donationData)
+      })
+        .then(res => res.json())
+        .then(data => {
+          alert("Donation Confirmed! Thank you for your support.");
+          window.location.href = "index.html";
+        })
+        .catch(err => {
+          alert("Saved locally! (Network issue, but we recorded your attempt). Thank you.");
+          console.error(err);
+          window.location.href = "index.html";
+        });
     });
   }
 

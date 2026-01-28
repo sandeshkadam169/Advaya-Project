@@ -319,7 +319,13 @@
                             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li><li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li></ul></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -367,23 +373,23 @@
                     <div class="amount-grid">
                         <div class="amount-card" onclick="selectAmount(500, this)">
                             <i class="fas fa-check-circle check-icon"></i>
-                            <h3>â‚¹ 500</h3>
+                            <h3>500</h3>
                             <p>One Month of Educational Materials</p>
                         </div>
                         <div class="amount-card active" onclick="selectAmount(1000, this)">
                             <i class="fas fa-check-circle check-icon"></i>
-                            <h3>â‚¹ 1,000</h3>
+                            <h3>1,000</h3>
                             <p>Nutrition & Meals for One Child / Month</p>
                         </div>
                         <div class="amount-card" onclick="selectAmount(5000, this)">
                             <i class="fas fa-check-circle check-icon"></i>
-                            <h3>â‚¹ 5,000</h3>
+                            <h3>5,000</h3>
                             <p>Sponsor a Child's Education for a Term</p>
                         </div>
                     </div>
 
                     <div class="custom-amount-wrapper">
-                        <span class="currency-symbol">â‚¹</span>
+                        <span class="currency-symbol"></span>
                         <input type="number" id="customAmount" class="custom-amount-input"
                             placeholder="Enter Custom Amount" oninput="updateFormAmount(this.value)">
                     </div>
@@ -420,50 +426,87 @@
 
                 <!-- Right Column: Form -->
                 <div class="form-area">
-                    <div class="glass-form-card">
-                        <h2 class="form-title">
-                            <i class="fas fa-heart"></i>
-                            Complete Donation
-                        </h2>
+                    <div class="glass-form-card" id="donationCard">
 
+                        <!-- STEP 1: CONTACT INFO -->
+                        <div id="step1-contact">
+                            <h2 class="form-title"><i class="fas fa-user-shield"></i> Secure Donation</h2>
+                            <form id="contactFormStep">
+                                <label class="input-label">FULL NAME</label>
+                                <input type="text" id="name" class="premium-input" placeholder="Enter your full name"
+                                    required>
 
+                                <label class="input-label">EMAIL ADDRESS</label>
+                                <input type="email" id="email" class="premium-input" placeholder="email@example.com"
+                                    required>
 
-                        <form id="donationStep1Form">
-                            <label class="input-label">FULL NAME</label>
-                            <input type="text" id="name" class="premium-input" placeholder="Enter your full name"
-                                required>
+                                <label class="input-label">PHONE NUMBER</label>
+                                <input type="tel" id="phone" class="premium-input" placeholder="+91" required>
 
-                            <label class="input-label">EMAIL ADDRESS</label>
-                            <input type="email" id="email" class="premium-input" placeholder="email@example.com"
-                                required>
+                                <label class="input-label">AMOUNT (₹)</label>
+                                <input type="number" id="amount" class="premium-input" value="1000" readonly
+                                    style="color: var(--primary-main); font-weight: 800;">
 
-                            <label class="input-label">PHONE NUMBER</label>
-                            <input type="tel" id="phone" class="premium-input" placeholder="+91" required>
+                                <button type="submit" id="requestOtpBtn" class="donate-submit-btn">
+                                    Donate Now <i class="fas fa-heart"></i>
+                                </button>
+                            </form>
+                        </div>
 
-                            <label class="input-label">DONATION AMOUNT (â‚¹)</label>
-                            <input type="number" id="amount" class="premium-input" value="1000" readonly
-                                style="font-weight: 800; color: var(--primary-main); font-size: 1.2rem;">
+                        <!-- STEP 2: OTP VERIFICATION -->
+                        <div id="step2-otp" style="display: none; text-align: center;">
+                            <h2 class="form-title" style="justify-content: center;">Verify OTP</h2>
+                            <p style="margin-bottom: 20px;">Enter the 6-digit code sent to your email and phone.</p>
 
+                            <input type="text" id="otpInput" class="premium-input" placeholder="------" maxlength="6"
+                                style="text-align: center; letter-spacing: 5px; font-size: 1.5rem; width: 80%; margin: 0 auto 20px;">
 
-
-                            <button type="submit" class="donate-submit-btn">
-                                Proceed to Payment
-                                <i class="fas fa-arrow-right"></i>
+                            <button type="button" id="verifyOtpBtn" class="donate-submit-btn">
+                                Verify Code <i class="fas fa-check-circle"></i>
                             </button>
-                        </form>
 
+                            <button type="button" onclick="location.reload()"
+                                style="background: none; border: none; color: var(--text-muted); margin-top: 15px; cursor: pointer; text-decoration: underline;">Cancel
+                                / Edit Details</button>
+                        </div>
 
-                        <!-- <div class="trust-badges">
-                            <div class="trust-badge">
-                                <i class="fas fa-lock"></i> SSL Secured
+                        <!-- STEP 3: PAYMENT LINKS -->
+                        <div id="step3-payment" style="display: none; text-align: center;">
+                            <h2 class="form-title"
+                                style="justify-content: center; color: var(--primary-dark); margin-bottom: 25px;">
+                                <i class="fas fa-wallet"></i> Payment Details
+                            </h2>
+                            <p style="margin-bottom: 30px;">Choose a method to complete your donation of <strong
+                                    id="payAmountDisplay">₹1000</strong></p>
+
+                            <!-- UPI Deep Link Buttons -->
+                            <a id="upiPayBtn" href="#" class="donate-submit-btn"
+                                style="background: #25D366; margin-bottom: 15px; text-decoration: none;">
+                                <i class="fas fa-mobile-alt"></i> Pay via UPI App
+                            </a>
+
+                            <div style="margin: 20px 0; border: 1px dashed #ccc; padding: 15px; border-radius: 10px;">
+                                <p style="font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase;">Direct UPI
+                                    ID</p>
+                                <strong style="font-size: 1.2rem; user-select: all;">9964720461@ybl</strong>
                             </div>
-                            <div class="trust-badge">
-                                <i class="fas fa-check-shield"></i> Verified
-                            </div>
-                            <div class="trust-badge">
-                                <i class="fas fa-credit-card"></i> PCI Compliant
-                            </div>
-                        </div> -->
+
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">After payment, please note your
+                                Transaction ID.</p>
+
+                            <hr style="margin: 20px 0; opacity: 0.2;">
+
+                            <form id="finalStepForm">
+                                <label class="input-label" style="text-align: left;">ENTER TRANSACTION ID</label>
+                                <input type="text" id="finalTxnId" class="premium-input"
+                                    placeholder="Example: 405788..." required>
+                                <button type="submit" class="donate-submit-btn"
+                                    style="background: var(--primary-dark);">
+                                    Confirm Donation <i class="fas fa-file-invoice"></i>
+                                </button>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
 
@@ -482,7 +525,13 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li><li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li></ul></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                        </ul>
+                    </li>
                     <li><a href="stories.html">Stories</a></li>
                     <li><a href="getinvolved.html">Get Involved</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
