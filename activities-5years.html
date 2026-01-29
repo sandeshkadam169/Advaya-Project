@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities During 5 Years | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logo.jpg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown"><a href="about.html" class="dropdown-toggle">Who We Are <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="nested-dropdown"><a href="about.html"><i class="fas fa-info-circle"></i> About Us
+                                    <i class="fas fa-chevron-right"></i></a>
+                                <ul class="nested-menu">
+                                    <li><a href="about.html#vision-mission">Vision & Mission</a></li>
+                                    <li><a href="journey.html">Journey</a></li>
+                                    <li><a href="research-presence.html">Research & Presence</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="stories.html"><i class="fas fa-book-open"></i> Stories</a></li>
+                            <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+                            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                            <li><a href="activities-5years.html"><i class="fas fa-history"></i> Activities during 5
+                                    Year</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
+                            <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
+                            <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="donate.html" class="nav-donate-btn">Donate Now</a>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <!-- Using a relevant background image -->
+        <img src="advayapictures/5year-anniversary.jpg" class="page-header-bg" alt="5 Year Activities Background"
+            onerror="this.src='advayapictures/DSC06903.JPG'">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Activities During 5 Years</h1>
+            <p>Celebrating our journey and impact through the years.</p>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Journey in Pictures</h2>
+                <p>Glimpses of our activities and milestones over the last 5 years.</p>
+            </div>
+
+            <style>
+                .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 20px;
+                    padding-top: 30px;
+                }
+
+                @media (max-width: 900px) {
+                    .gallery-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media (max-width: 600px) {
+                    .gallery-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+            <div class="gallery-grid">
+                <!-- Images cc1 to cc13 -->
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc1.JPG" alt="Activity 1"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc2.JPG" alt="Activity 2"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc3.JPG" alt="Activity 3"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc4.JPG" alt="Activity 4"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc5.JPG" alt="Activity 5"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc6.JPG" alt="Activity 6"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc7.JPG" alt="Activity 7"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc8.JPG" alt="Activity 8"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc9.JPG" alt="Activity 9"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc10.JPG" alt="Activity 10"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc11.JPG" alt="Activity 11"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc12.JPG" alt="Activity 12"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" style="border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-md);">
+                    <img src="advayapictures/cc13.JPG" alt="Activity 13"
+                        style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Advaya Trust</h3>
+                <p>Empowering communities, one life at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                            <li><a href="activities-5years.html"><i class="fas fa-history"></i> Activities during 5
+                                    Year</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>advayatrust@gmail.com</p>
+                <p>JMJ Lazarus Park, Kithiganur, K.R Puram, Bengaluru - 560036</p>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div style="display: flex; gap: 15px; margin-top: 10px;">
+                    <a href="https://www.instagram.com/advaya_ngo?igsh=aHpocnA5MmIzMXRz" target="_blank"
+                        style="font-size: 1.5rem; color: white; transition: color 0.3s;"
+                        onmouseover="this.style.color='#E4405F'" onmouseout="this.style.color='white'">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtu.be/v7CZ0QVqHLA?si=BkJRk828NkHmw82v" target="_blank"
+                        style="font-size: 1.5rem; color: white; transition: color 0.3s;"
+                        onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='white'">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
