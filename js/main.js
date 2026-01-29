@@ -2,6 +2,10 @@ function toggleMenu() {
   document.getElementById("nav-menu").classList.toggle("active");
 }
 
+
+// Google Apps Script URL - Centralized Configuration
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxaVZOh1WTS51xj_yb0Jtx82bzXtMMMDvYp5DtRg8HQZjJypvoyuVCz0DswWgZy8iaOGw/exec";
+
 /* Dynamic Number Counter Animation */
 document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll('.count-up');
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // STEP 1: Donation Details Submission
-  const step1Form = document.querySelector("#donationStep1Form");
+  // const step1Form = document.querySelector("#donationStep1Form"); // Removed unused selector
 
   // --- NEW SIMPLIFIED FLOW (No OTP) ---
 
@@ -55,34 +59,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const step3Div = document.getElementById("step3-payment");
   const contactFormStep = document.getElementById("contactFormStep");
 
-  // Inputs
-  const nameInput = document.getElementById("name");
-  const emailInput = document.getElementById("email");
-  const phoneInput = document.getElementById("phone");
-  const amountInput = document.getElementById("amount");
+  // Inputs (Dom elements will be selected inside handlers to avoid global conflicts)
+  // const nameInput = ... (Removed global generic selectors)
 
   // Payment
   const upiPayBtn = document.getElementById("upiPayBtn");
   const payAmountDisplay = document.getElementById("payAmountDisplay");
   const finalStepForm = document.getElementById("finalStepForm");
 
-  // URL of your Google Apps Script Web App
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxUaM13CUb6CNWekfpasYFxGSgpCANZGJ0OKF0Jmcz6A8lhMiRyH_7PwR0Zk-6_oG6nA/exec";
+  // URL of your Google Apps Script Web App (Now Global)
+  // const SCRIPT_URL = "https://script.google.com/...";
+
 
   // --- STEP 1: PROCEED TO PAYMENT ---
   if (contactFormStep) {
     contactFormStep.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      const email = emailInput.value;
-      const phone = phoneInput.value;
-      const amount = amountInput.value;
+      const email = document.getElementById("donateEmail").value;
+      const phone = document.getElementById("donatePhone").value;
+      const amount = document.getElementById("donateAmount").value;
 
       // Simple Validation
       if (!email.includes("@") || phone.length < 10) {
         alert("Please enter valid email and phone number.");
         return;
       }
+
+      // Store in Session Storage
+      const name = document.getElementById("donateName").value;
+      sessionStorage.setItem("donationName", name);
+      sessionStorage.setItem("donationEmail", email);
+      sessionStorage.setItem("donationPhone", phone);
+      sessionStorage.setItem("donationAmount", amount);
+
+      // Populate Hidden Fields in Final Form
+      document.getElementById("hiddenName").value = name;
+      document.getElementById("hiddenEmail").value = email;
+      document.getElementById("hiddenPhone").value = phone;
+      document.getElementById("hiddenAmount").value = amount;
 
       // Move to Payment Step
       step1Div.style.display = "none";
@@ -101,44 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- STEP 2: PAYMENT & CONFIRMATION ---
-  if (finalStepForm) {
-    finalStepForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const txnId = document.getElementById("finalTxnId").value;
-      // submitBtn
-      const submitBtn = finalStepForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-      submitBtn.disabled = true;
-
-      const donationData = {
-        action: 'save_donation',
-        name: nameInput.value,
-        email: emailInput.value,
-        phone: phoneInput.value,
-        amount: amountInput.value,
-        transactionId: txnId
-      };
-
-      // Submit Data to Google Sheet
-      fetch(SCRIPT_URL, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(donationData)
-      })
-        .then(res => res.json())
-        .then(data => {
-          alert("Donation Confirmed! Thank you for your support.");
-          window.location.href = "index.html";
-        })
-        .catch(err => {
-          alert("Saved locally! (Network issue, but we recorded your attempt). Thank you.");
-          console.error(err);
-          window.location.href = "index.html";
-        });
-    });
-  }
+  // Handled by generic HTML Form Action now (SheetDB)
+  // No JS listener needed for finalStepForm
 
   // STEP 2: Payment Confirmation Submission
   const step2Form = document.querySelector("#paymentConfirmationForm");
@@ -164,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Submit to Google Sheet API
-      fetch("https://script.google.com/macros/s/AKfycbwxUaM13CUb6CNWekfpasYFxGSgpCANZGJ0OKF0Jmcz6A8lhMiRyH_7PwR0Zk-6_oG6nA/exec", {
+      fetch(SCRIPT_URL, {
         method: "POST",
         headers: {
           "Content-Type": "text/plain;charset=utf-8"
@@ -188,40 +167,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// https://script.google.com/macros/s/AKfycbygpS2DiLl6I1pe3YmRg6855eaqYuFDoJJrc9jlAoHc9vFe5hd0YMFf97iQq_JlOpBlug/exec
+// Google Apps Script Web App URL handled globally
 // STEP 3: Contact Form Submission
-const contactForm = document.querySelector("#contactForm");
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+// STEP 3: Contact Form Submission
+// Contact Form Submission (Handled by HTML Form Action now)
+// const contactForm = document.querySelector("#contactForm");
+// ... removed to allow native POST submission ...
 
-    const contactData = {
-      name: document.getElementById("contactName").value,
-      phone: document.getElementById("contactPhone").value,
-      message: document.getElementById("contactMessage").value,
-      type: "contact_message" // Identifier for the backend if needed
-    };
-
-    // Submit to Same Google Sheet API
-    fetch("https://script.google.com/macros/s/AKfycbwxUaM13CUb6CNWekfpasYFxGSgpCANZGJ0OKF0Jmcz6A8lhMiRyH_7PwR0Zk-6_oG6nA/exec", {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
-      body: JSON.stringify(contactData)
-    })
-      .then(res => res.json())
-      .then(data => {
-        alert("Message sent successfully! We will get back to you soon.");
-        contactForm.reset();
-      })
-      .catch(err => {
-        console.error("Error:", err);
-        alert("Message sent! (Note: Response check failed but data likely sent)");
-        contactForm.reset();
-      });
-  });
-}
+// STEP 4: Material Donation Form Submission
+// Handled by generic HTML Form Action now (SheetDB)
+// const materialForm = document.querySelector("#materialDonationForm");
+// ... removed to allow native POST submission ...
 
 // HERO CAROUSEL LOGIC
 let currentSlideIndex = 0;

@@ -327,13 +327,13 @@
                         </ul>
                     </li>
                     <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
-                class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
-              <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
-              <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
-            </ul>
-          </li>
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
+                            <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
+                            <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <div class="nav-actions">
@@ -434,19 +434,20 @@
                             <h2 class="form-title"><i class="fas fa-user-shield"></i> Secure Donation</h2>
                             <form id="contactFormStep">
                                 <label class="input-label">FULL NAME</label>
-                                <input type="text" id="name" class="premium-input" placeholder="Enter your full name"
-                                    required>
+                                <input type="text" id="donateName" class="premium-input" name="name"
+                                    placeholder="Enter your full name" required>
 
                                 <label class="input-label">EMAIL ADDRESS</label>
-                                <input type="email" id="email" class="premium-input" placeholder="email@example.com"
-                                    required>
+                                <input type="email" id="donateEmail" class="premium-input" name="email"
+                                    placeholder="email@example.com" required>
 
                                 <label class="input-label">PHONE NUMBER</label>
-                                <input type="tel" id="phone" class="premium-input" placeholder="+91" required>
+                                <input type="tel" id="donatePhone" name="phone" class="premium-input" placeholder="+91"
+                                    required>
 
                                 <label class="input-label">AMOUNT (₹)</label>
-                                <input type="number" id="amount" class="premium-input" value="1000" readonly
-                                    style="color: var(--primary-main); font-weight: 800;">
+                                <input type="number" id="donateAmount" name="amount" class="premium-input" value=""
+                                    readonly style="color: var(--primary-main); font-weight: 800;">
 
                                 <button type="submit" id="requestOtpBtn" class="donate-submit-btn">
                                     Donate Now <i class="fas fa-heart"></i>
@@ -497,9 +498,15 @@
 
                             <hr style="margin: 20px 0; opacity: 0.2;">
 
-                            <form id="finalStepForm">
+                            <form action="https://sheetdb.io/api/v1/99zv92n75qknt" method="POST" id="sheetdb-form">
+                                <!-- Hidden Fields populated from Session Storage/Step 1 -->
+                                <input type="hidden" id="hiddenName" name="name">
+                                <input type="hidden" id="hiddenEmail" name="email">
+                                <input type="hidden" id="hiddenPhone" name="phone">
+                                <input type="hidden" id="hiddenAmount" name="amount">
+
                                 <label class="input-label" style="text-align: left;">ENTER TRANSACTION ID</label>
-                                <input type="text" id="finalTxnId" class="premium-input"
+                                <input type="text" id="finalTxnId" name="transaction_id" class="premium-input"
                                     placeholder="Example: 405788..." required>
                                 <button type="submit" class="donate-submit-btn"
                                     style="background: var(--primary-dark);">
@@ -566,13 +573,34 @@
 
     <script src="js/main.js"></script>
     <script>
+
+        const form = document.getElementById('sheetdb-form');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert("Submitted!! Thank you for your donation");
+                    form.reset();
+                    location.reload(); // optional
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Something went wrong. Please try again.");
+                });
+        });
         function selectAmount(amount, element) {
             // Update active state
             document.querySelectorAll('.amount-card').forEach(card => card.classList.remove('active'));
             element.classList.add('active');
 
             // Update form input
-            document.getElementById('amount').value = amount;
+            document.getElementById('donateAmount').value = amount;
 
             // Clear custom amount input
             document.getElementById('customAmount').value = '';
@@ -584,9 +612,21 @@
                 document.querySelectorAll('.amount-card').forEach(card => card.classList.remove('active'));
 
                 // Update form input
-                document.getElementById('amount').value = value;
+                document.getElementById('donateAmount').value = value;
             }
         }
+
+        // Initialize default amount
+        document.addEventListener('DOMContentLoaded', () => {
+            const activeCard = document.querySelector('.amount-card.active');
+            if (activeCard) {
+                // extract amount from onclick attribute logic or just hardcode default if known, 
+                // or simpler: just trigger the click on the active card to run logic
+                // But better to just set it directly to avoid side effects
+                // The active card in HTML is 1000.
+                document.getElementById('donateAmount').value = "1000";
+            }
+        });
 
     </script>
 </body>

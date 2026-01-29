@@ -180,7 +180,7 @@
                 Your Donation</h2>
 
             <p style="margin-bottom: 10px;">Use the UPI details below to pay <strong id="displayAmount"
-                    style="color: var(--primary-main);">â‚¹ 0</strong></p>
+                    style="color: var(--primary-main);">₹ 0</strong></p>
 
             <div
                 style="background: #f8fafc; padding: 25px; border-radius: var(--radius-lg); border: 2px dashed #cbd5e0; margin: 20px 0;">
@@ -273,7 +273,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             const amount = sessionStorage.getItem("donationAmount");
             if (amount) {
-                document.getElementById("displayAmount").innerText = "â‚¹ " + amount;
+                document.getElementById("displayAmount").innerText = "₹ " + amount;
             } else {
                 // If no session data, redirect back to start
                 // window.location.href = "donate.html";

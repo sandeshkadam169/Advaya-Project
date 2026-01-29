@@ -290,13 +290,13 @@
                         </ul>
                     </li>
                     <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
-                class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
-              <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
-              <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
-            </ul>
-          </li>
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
+                            <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
+                            <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <div class="nav-actions">
@@ -400,28 +400,31 @@
                             Donation Details
                         </h2>
 
-                        <form id="materialDonationForm">
+                        <form id="sheetdb-form"
+                            action="https://sheetdb.io/api/v1/99zv92n75qknt" method="POST">
                             <label class="input-label">FULL NAME</label>
-                            <input type="text" id="name" class="premium-input" placeholder="Enter your full name"
-                                required>
+                            <input type="text" id="materialName" name="name" class="premium-input"
+                                placeholder="Enter your full name" required>
 
                             <label class="input-label">EMAIL ADDRESS</label>
-                            <input type="email" id="email" class="premium-input" placeholder="email@example.com"
-                                required>
+                            <input type="email" id="materialEmail" name="email" class="premium-input"
+                                placeholder="email@example.com" required>
 
                             <label class="input-label">PHONE NUMBER</label>
-                            <input type="tel" id="phone" class="premium-input" placeholder="+91" required>
+                            <input type="tel" id="materialPhone" name="phone" class="premium-input" placeholder="+91"
+                                required>
 
-                            <label class="input-label">SELECTED CATEGORY</label>
-                            <input type="text" id="category" class="premium-input" placeholder="Select from left"
-                                readonly style="font-weight: 700; color: var(--primary-main);">
+                            <!-- <label class="input-label">SELECTED CATEGORY</label>
+                            <input type="text" id="materialCategory" name="item_category" class="premium-input"
+                                placeholder="Select from left" readonly
+                                style="font-weight: 700; color: var(--primary-main);"> -->
 
                             <label class="input-label">DESCRIPTION OF ITEMS</label>
-                            <textarea id="description" class="premium-textarea" rows="4"
+                            <textarea id="materialDescription" name="item_description" class="premium-textarea" rows="4"
                                 placeholder="E.g., 20 notebooks, 10 sets of uniforms..." required></textarea>
 
                             <label class="input-label">ADDRESS (For Pickup/Record)</label>
-                            <textarea id="address" class="premium-textarea" rows="3"
+                            <textarea id="materialAddress" name="pickup_address" class="premium-textarea" rows="3"
                                 placeholder="Enter your address"></textarea>
 
                             <button type="submit" class="donate-submit-btn">
@@ -485,8 +488,36 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    
+</body>
+<script src="js/main.js"></script>
     <script>
+
+        const form = document.getElementById('sheetdb-form');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+  })
+    .then(response => response.json())
+    .then(data => {
+      alert("Submitted!! Thank you for your donation");
+      form.reset();
+      location.reload(); // optional
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("Something went wrong. Please try again.");
+    });
+});
+
+        
+                    
+        
+
         function selectCategory(category, element) {
             // Update active state
             document.querySelectorAll('.amount-card').forEach(card => card.classList.remove('active'));
@@ -496,6 +527,5 @@
             document.getElementById('category').value = category;
         }
     </script>
-</body>
 
 </html>
