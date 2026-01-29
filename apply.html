@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -186,11 +186,18 @@
                             <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li><li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li></ul></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
+                            <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
                             <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
                         </ul>
                     </li>
@@ -206,57 +213,56 @@
     </header>
 
     <div class="apply-container">
-        <div class="container">
-            <div class="form-glass-card">
-                <div id="applicationForm">
-                    <div class="form-header">
-                        <div class="icon-box" id="headerIcon">
-                            <i class="fas fa-hands-helping"></i>
+        <div class="form-glass-card">
+            <div id="applicationForm">
+                <div class="form-header">
+                    <div class="icon-box" id="headerIcon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h1 id="formTitle">Volunteer Application</h1>
+                    <p id="formSubtitle">Join our mission to empower children through education.</p>
+                </div>
+
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-input" placeholder="John Doe" required>
                         </div>
-                        <h1 id="formTitle">Volunteer Application</h1>
-                        <p id="formSubtitle">Join our mission to empower children through education.</p>
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" placeholder="+91 9876543210" required>
+                        </div>
+
+                        <!-- Dynamic Section -->
+                        <div id="dynamicFields" class="form-group full-width">
+                            <!-- JS items will go here -->
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Additional Message (Optional)</label>
+                            <textarea class="form-input" rows="4" placeholder="Tell us more..."></textarea>
+                        </div>
                     </div>
 
-                    <form onsubmit="handleSubmit(event)">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Full Name</label>
-                                <input type="text" class="form-input" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Email Address</label>
-                                <input type="email" class="form-input" placeholder="john@example.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Phone Number</label>
-                                <input type="tel" class="form-input" placeholder="+91 9876543210" required>
-                            </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Submit Application <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
 
-                            <!-- Dynamic Section -->
-                            <div id="dynamicFields" class="form-group full-width">
-                                <!-- JS items will go here -->
-                            </div>
-
-                            <div class="form-group full-width">
-                                <label class="form-label">Additional Message (Optional)</label>
-                                <textarea class="form-input" rows="4" placeholder="Tell us more..."></textarea>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="submit-btn" id="submitBtn">
-                            Submit Application <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-
-                <div class="success-message" id="successMessage">
-                    <i class="fas fa-check-circle"></i>
-                    <h2>Thank You!</h2>
-                    <p>Your application has been submitted successfully. Our team will get in touch with you soon.</p>
-                    <a href="index.html" class="hero-btn" style="margin-top: 30px;">Back to Home</a>
-                </div>
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i>
+                <h2>Thank You!</h2>
+                <p>Your application has been submitted successfully. Our team will get in touch with you soon.</p>
+                <a href="index.html" class="hero-btn" style="margin-top: 30px;">Back to Home</a>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- FOOTER -->
@@ -270,12 +276,19 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="about.html">About Us</a></li>
-                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li><li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li></ul></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                        </ul>
+                    </li>
                     <li><a href="stories.html">Stories</a></li>
                     <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
+                            <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
                             <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
                         </ul>
                     </li>
