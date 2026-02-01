@@ -6,6 +6,24 @@ function toggleMenu() {
 // Google Apps Script URL - Centralized Configuration
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxaVZOh1WTS51xj_yb0Jtx82bzXtMMMDvYp5DtRg8HQZjJypvoyuVCz0DswWgZy8iaOGw/exec";
 
+// Mobile Dropdown Toggle Logic
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.dropdown-toggle i').forEach(arrow => {
+    arrow.addEventListener('click', function (e) {
+      // Check if we are on mobile view (using the same breakpoint as CSS)
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        e.stopPropagation();
+        const dropdownLi = this.closest('li.dropdown');
+        if (dropdownLi) {
+          dropdownLi.classList.toggle('active-dropdown');
+        }
+      }
+    });
+  });
+});
+
+
 /* Dynamic Number Counter Animation */
 document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll('.count-up');
