@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrations | Advaya Trust</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Celebration Specific Aesthetic Styles */
+        /* Celebration Specific Aesthetic Styles */
+        .celebration-section {
+            padding: 80px 20px;
+            background: #fafafa;
+        }
+
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 600px) {
+            .masonry-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .masonry-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .masonry-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .celebration-item {
+            background: white;
+            /* margin-bottom removed because Grid handles gap */
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            /* Soft, premium shadow */
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .celebration-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .celebration-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        /* Subtle zoom on hover */
+        .celebration-item:hover .celebration-img {
+            transform: scale(1.03);
+        }
+
+        .item-info {
+            padding: 25px 30px;
+            background: white;
+            position: relative;
+            z-index: 10;
+        }
+
+        .item-info h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+            /* Use serif for elegant feel if available, else fallback */
+        }
+
+        .item-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+        }
+
+        .item-decoration {
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-brand);
+            margin-top: 15px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-icon"><img src="advayapictures/logodiii.jpeg" alt="Advaya Logo"></div>
+                    <div class="logo-text">
+                        <span>Advaya</span>
+                        <small>Educational and Charitable Trust</small>
+                    </div>
+                </a>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+          <li class="dropdown"><a href="about.html" class="dropdown-toggle">Who We Are <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+
+              <li class="nested-dropdown"><a href="about.html"><i class="fas fa-info-circle"></i> About Us <i class="fas fa-chevron-right"></i></a>
+                <ul class="nested-menu">
+                  <li><a href="about.html#vision-mission">Vision & Mission</a></li>
+                  <li><a href="journey.html">Journey</a></li>
+                  <li><a href="research-presence.html">Research & Presence</a></li>
+                </ul>
+              </li>
+              <li><a href="stories.html"><i class="fas fa-book-open"></i> Stories</a></li>
+              <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+              <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                            <li><a href="celebration.html"><i class="fas fa-glass-cheers"></i> Celebration</a></li>
+                            <li><a href="activities-5years.html"><i class="fas fa-history"></i> Activities during 5
+                                    Year</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="getinvolved.html" class="dropdown-toggle">Get Involved <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="getinvolved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li>
+                            <li><a href="partners.html"><i class="fas fa-handshake"></i> Partners</a></li>
+                            <li><a href="overall-info.html"><i class="fas fa-info-circle"></i> More</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="donate-dropdown">
+                    <a href="#" class="nav-donate-btn active">Donate Now <i class="fas fa-chevron-down ml-2"></i></a>
+                    <ul class="donate-menu">
+                        <li><a href="donate.html"><i class="fas fa-hand-holding-usd"></i> Donate Money</a></li>
+                        <li><a href="donate-materials.html"><i class="fas fa-box-open"></i> Donate Items</a></li>
+                    </ul>
+                </div>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <img src="advayapictures/DSC07426.JPG" class="page-header-bg" alt="Celebration Background">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Celebrations</h1>
+            <p>Joyful moments and milestones at Advaya Trust.</p>
+        </div>
+    </section>
+
+    <!-- CELEBRATION MASONRY GRID -->
+    <section class="celebration-section">
+        <div class="masonry-grid">
+
+            <!-- 1. Republic Day Celebration -->
+            <div class="celebration-item">
+                <div style="overflow: hidden;">
+                    <img src="advayapictures/i1.JPG" alt="Republic Day Celebration" class="celebration-img">
+                </div>
+                <div class="item-info">
+                    <p>Event</p>
+                    <h3>Republic Day Celebration</h3>
+                    <div class="item-decoration"></div>
+                </div>
+            </div>
+
+            <!-- 2. Christmas Celebration -->
+            <div class="celebration-item">
+                <div style="overflow: hidden;">
+                    <img src="advayapictures/i2.JPG" alt="Christmas Celebration" class="celebration-img">
+                </div>
+                <div class="item-info">
+                    <p>Event</p>
+                    <h3>Christmas Celebration</h3>
+                    <div class="item-decoration"></div>
+                </div>
+            </div>
+
+            <!-- 3. Ayudha Pooja -->
+            <div class="celebration-item">
+                <div style="overflow: hidden;">
+                    <img src="advayapictures/i3.JPG" alt="Ayudha Pooja" class="celebration-img">
+                </div>
+                <div class="item-info">
+                    <p>Culture</p>
+                    <h3>Ayudha Pooja</h3>
+                    <div class="item-decoration"></div>
+                </div>
+            </div>
+
+            <!-- 4. Diwali Celebration -->
+            <div class="celebration-item">
+                <div style="overflow: hidden;">
+                    <img src="advayapictures/i4.JPG" alt="Diwali Celebration" class="celebration-img">
+                </div>
+                <div class="item-info">
+                    <p>Festival</p>
+                    <h3>Diwali Celebration</h3>
+                    <div class="item-decoration"></div>
+                </div>
+            </div>
+
+            <!-- 5. Advaya Cricket League -->
+            <div class="celebration-item">
+                <div style="overflow: hidden;">
+                    <img src="advayapictures/i5.JPG" alt="Advaya Cricket League" class="celebration-img">
+                </div>
+                <div class="item-info">
+                    <p>Sports</p>
+                    <h3>Advaya Cricket League</h3>
+                    <div class="item-decoration"></div>
+                </div>
+            </div>
+
+            <!-- 6. Inauguration of the New Mobile School Van -->
+            <div class="celebration-item">
+                <div style="overflow: hidden;">
+                    <img src="advayapictures/i6.JPG" alt="Inauguration of the New Mobile School Van"
+                        class="celebration-img">
+                </div>
+                <div class="item-info">
+                    <p>Milestone</p>
+                    <h3>Inauguration of the New Mobile School Van</h3>
+                    <div class="item-decoration"></div>
+                </div>
+            </div>
+
+            <!-- 7. Holi Celebration -->
+            <div class="celebration-item">
+                <div style="overflow: hidden;">
+                    <img src="advayapictures/i7.JPG" alt="Holi Celebration" class="celebration-img">
+                </div>
+                <div class="item-info">
+                    <p>Festival</p>
+                    <h3>Holi Celebration</h3>
+                    <div class="item-decoration"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="impact-section" style="margin-top:0;">
+        <div class="hero-overlay" style="z-index: 0; background: var(--impact-gradient);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="impact-header">
+                <h2>Join Our Celebration</h2>
+                <p>Support us in creating more smiles.</p>
+            </div>
+            <a href="donate.html" class="hero-btn" style="background:var(--primary-main); color:white;">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Advaya Trust</h3>
+                <p>Empowering communities, one life at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown"><a href="programs.html" class="dropdown-toggle">Programs <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="programs.html"><i class="fas fa-tasks"></i> Our Programs</a></li>
+                            <li><a href="extra-activities.html"><i class="fas fa-camera"></i> Extra Activities</a></li>
+                            <li><a href="celebration.html"><i class="fas fa-glass-cheers"></i> Celebration</a></li>
+                            <li><a href="activities-5years.html"><i class="fas fa-history"></i> Activities during 5
+                                    Year</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="getinvolved.html">Get Involved</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>advayatrust@gmail.com</p>
+                <p>JMJ Lazarus Park, Kithiganur, K.R Puram, Bengaluru - 560036</p>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div style="display: flex; gap: 15px; margin-top: 10px;">
+                    <a href="https://www.instagram.com/advaya_ngo?igsh=aHpocnA5MmIzMXRz" target="_blank"
+                        style="font-size: 1.5rem; color: white; transition: color 0.3s;"
+                        onmouseover="this.style.color='#E4405F'" onmouseout="this.style.color='white'">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtu.be/v7CZ0QVqHLA?si=BkJRk828NkHmw82v" target="_blank"
+                        style="font-size: 1.5rem; color: white; transition: color 0.3s;"
+                        onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='white'">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Advaya Education & Charitable Trust.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
