@@ -398,16 +398,7 @@
                         <input type="number" id="customAmount" class="custom-amount-input"
                             placeholder="Enter Custom Amount" oninput="updateFormAmount(this.value)">
                     </div>
-                    <!-- <div style="text-align: center;">
-                        <div
-                            style="width: 150px; height: 150px; margin: 0 auto; background: #f8fafc; border: 2px dashed #cbd5e0; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-md);">
-                            <img src="advayapictures/qrcode_placeholder.png" alt="QR Code"
-                                style="max-width: 100%; max-height: 100%; display: block;"
-                                onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color: var(--text-muted); font-size: 0.8rem;\'>QR Code Placeholder</span>'">
-                        </div>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;">Scan to Pay via
-                            UPI</p>
-                    </div> -->
+
 
                     <div class="impact-sidebar">
                         <div class="impact-item-mini">
@@ -486,24 +477,61 @@
                                     id="payAmountDisplay">₹1000</strong></p>
 
                             <!-- UPI Deep Link Buttons -->
-                            <a id="upiPayBtn" href="#" class="donate-submit-btn"
-                                style="background: #25D366; margin-bottom: 15px; text-decoration: none;">
-                                <i class="fas fa-mobile-alt"></i> Pay via UPI App
-                            </a>
+                            <!-- Payment Info Card -->
+                            <div
+                                style="background: #f8fafc; border-radius: 16px; padding: 25px; margin: 20px 0; border: 1px solid #edf2f7; text-align: left;">
+                                <div
+                                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                                    <div>
+                                        <span
+                                            style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Name</span>
+                                        <div style="font-size: 1rem; color: var(--primary-dark); font-weight: 600;">
+                                            Advaya ECT</div>
+                                    </div>
+                                    <div>
+                                        <span
+                                            style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Number</span>
+                                        <div style="font-size: 1rem; color: var(--primary-dark); font-weight: 600;">
+                                            7411029259</div>
+                                    </div>
+                                </div>
 
-                            <div style="margin: 20px 0; border: 1px dashed #ccc; padding: 15px; border-radius: 10px;">
-                                <p style="font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase;">Direct UPI
-                                    ID</p>
-                                <strong style="font-size: 1.2rem; user-select: all;">9964720461@ybl</strong>
+                                <div style="margin-bottom: 20px;">
+                                    <span
+                                        style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">UPI
+                                        ID</span>
+                                    <div
+                                        style="background: white; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+                                        <strong
+                                            style="font-size: 1.1rem; color: var(--primary-main); letter-spacing: 0.5px; user-select: all;">7411029259@kbizaxix</strong>
+                                        <i class="far fa-copy" style="color: var(--text-muted); cursor: pointer;"
+                                            onclick="navigator.clipboard.writeText('7411029259@kbizaxix'); alert('UPI ID Copied!');"
+                                            title="Copy"></i>
+                                    </div>
+                                </div>
+
                             </div>
 
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">After payment, please note your
-                                Transaction ID.</p>
+                            <!-- QR Code Toggle -->
+                            <div style="text-align: center; margin-bottom: 20px;">
+                                <button type="button" onclick="toggleQRCode()" class="donate-submit-btn"
+                                    style="background: white; color: var(--primary-main); border: 2px solid var(--primary-main); width: 100%; box-shadow: none;">
+                                    <i class="fas fa-qrcode"></i> Show Payment QR Code
+                                </button>
 
-                            <hr style="margin: 20px 0; opacity: 0.2;">
+                                <div id="qrCodeContainer"
+                                    style="display: none; margin-top: 20px; animation: slideDown 0.3s ease;">
+                                    <div
+                                        style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: inline-block;">
+                                        <img src="advayapictures/scanner.jpeg" alt="Payment QR Code"
+                                            style="width: 100%; max-width: 250px; border-radius: 8px; display: block;">
+                                    </div>
+                                </div>
+                            </div>
 
-                            <form action="https://sheetdb.io/api/v1/99zv92n75qknt" method="POST" id="sheetdb-form">
-                                <!-- Hidden Fields populated from Session Storage/Step 1 -->
+                            <form action="https://sheetdb.io/api/v1/99zv92n75qknt" method="POST" id="sheetdb-form"
+                                style="margin-top: 30px;">
+                                <!-- Hidden Fields -->
                                 <input type="hidden" id="hiddenName" name="name">
                                 <input type="hidden" id="hiddenEmail" name="email">
                                 <input type="hidden" id="hiddenPhone" name="phone">
@@ -511,12 +539,16 @@
 
                                 <label class="input-label" style="text-align: left;">ENTER TRANSACTION ID</label>
                                 <input type="text" id="finalTxnId" name="transaction_id" class="premium-input"
-                                    placeholder="Example: 405788..." required>
+                                    placeholder="UPI Transaction ID (e.g. 1234567890)" required>
+
                                 <button type="submit" class="donate-submit-btn"
                                     style="background: var(--primary-dark);">
                                     Confirm Donation <i class="fas fa-file-invoice"></i>
                                 </button>
                             </form>
+
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 15px;">Thank you for
+                                your generous support!</p>
                         </div>
 
                     </div>
@@ -555,8 +587,8 @@
             <div class="footer-col">
                 <h3>Contact</h3>
                 <p>advayatrust@gmail.com</p>
-        <p>+91 9964720461</p>
-        <p>+91 9964764529</p>
+                <p>+91 9964720461</p>
+                <p>+91 9964764529</p>
                 <p>JMJ Lazarus Park, Kithiganur, K.R Puram, Bengaluru - 560036</p>
             </div>
             <div class="footer-col">
@@ -583,26 +615,7 @@
     <script src="js/main.js"></script>
     <script>
 
-        const form = document.getElementById('sheetdb-form');
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    alert("Submitted!! Thank you for your donation");
-                    form.reset();
-                    location.reload(); // optional
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    alert("Something went wrong. Please try again.");
-                });
-        });
         function selectAmount(amount, element) {
             // Update active state
             document.querySelectorAll('.amount-card').forEach(card => card.classList.remove('active'));
@@ -634,6 +647,48 @@
                 // But better to just set it directly to avoid side effects
                 // The active card in HTML is 1000.
                 document.getElementById('donateAmount').value = "1000";
+            }
+        });
+
+        function toggleQRCode() {
+            const container = document.getElementById('qrCodeContainer');
+            const btn = document.querySelector('button[onclick="toggleQRCode()"]');
+
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                btn.innerHTML = '<i class="fas fa-times"></i> Hide QR Code';
+                btn.style.background = '#ffe5e5';
+                btn.style.borderColor = '#ff4444';
+                btn.style.color = '#ff4444';
+            } else {
+                container.style.display = 'none';
+                btn.innerHTML = '<i class="fas fa-qrcode"></i> Show Payment QR Code';
+                btn.style.background = 'white';
+                btn.style.borderColor = 'var(--primary-main)';
+                btn.style.color = 'var(--primary-main)';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dbForm = document.getElementById('sheetdb-form');
+            if (dbForm) {
+                dbForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    fetch(dbForm.action, {
+                        method: 'POST',
+                        body: new FormData(dbForm),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            alert("Submitted!! Thank you for your donation");
+                            dbForm.reset();
+                            location.reload();
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                            alert("Something went wrong. Please try again.");
+                        });
+                });
             }
         });
 

@@ -112,10 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.setItem("donationAmount", amount);
 
       // Populate Hidden Fields in Final Form
-      document.getElementById("hiddenName").value = name;
-      document.getElementById("hiddenEmail").value = email;
-      document.getElementById("hiddenPhone").value = phone;
-      document.getElementById("hiddenAmount").value = amount;
+      const hName = document.getElementById("hiddenName");
+      const hEmail = document.getElementById("hiddenEmail");
+      const hPhone = document.getElementById("hiddenPhone");
+      const hAmount = document.getElementById("hiddenAmount");
+
+      if (hName) hName.value = name;
+      if (hEmail) hEmail.value = email;
+      if (hPhone) hPhone.value = phone;
+      if (hAmount) hAmount.value = amount;
+
+
 
       // Move to Payment Step
       step1Div.style.display = "none";
