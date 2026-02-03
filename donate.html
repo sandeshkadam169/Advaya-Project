@@ -283,6 +283,57 @@
             font-weight: 800;
             color: var(--text-muted);
         }
+
+        .payment-tabs {
+            display: flex;
+            background: #f1f5f9;
+            padding: 5px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: var(--primary-main);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
@@ -478,68 +529,170 @@
 
                             <!-- UPI Deep Link Buttons -->
                             <!-- Payment Info Card -->
-                            <div
-                                style="background: #f8fafc; border-radius: 16px; padding: 25px; margin: 20px 0; border: 1px solid #edf2f7; text-align: left;">
-                                <div
-                                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
-                                    <div>
-                                        <span
-                                            style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Name</span>
-                                        <div style="font-size: 1rem; color: var(--primary-dark); font-weight: 600;">
-                                            Advaya ECT</div>
-                                    </div>
-                                    <div>
-                                        <span
-                                            style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Number</span>
-                                        <div style="font-size: 1rem; color: var(--primary-dark); font-weight: 600;">
-                                            7411029259</div>
-                                    </div>
-                                </div>
-
-                                <div style="margin-bottom: 20px;">
-                                    <span
-                                        style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">UPI
-                                        ID</span>
-                                    <div
-                                        style="background: white; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
-                                        <strong
-                                            style="font-size: 1.1rem; color: var(--primary-main); letter-spacing: 0.5px; user-select: all;">7411029259@kbizaxix</strong>
-                                        <i class="far fa-copy" style="color: var(--text-muted); cursor: pointer;"
-                                            onclick="navigator.clipboard.writeText('7411029259@kbizaxix'); alert('UPI ID Copied!');"
-                                            title="Copy"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- QR Code Toggle -->
-                            <div style="text-align: center; margin-bottom: 20px;">
-                                <button type="button" onclick="toggleQRCode()" class="donate-submit-btn"
-                                    style="background: white; color: var(--primary-main); border: 2px solid var(--primary-main); width: 100%; box-shadow: none;">
-                                    <i class="fas fa-qrcode"></i> Show Payment QR Code
+                            <!-- Payment Tabs -->
+                            <div class="payment-tabs">
+                                <button class="tab-btn active" onclick="switchPaymentTab('upi', this)">
+                                    <i class="fas fa-mobile-alt"></i> Pay via UPI
                                 </button>
+                                <button class="tab-btn" onclick="switchPaymentTab('bank', this)">
+                                    <i class="fas fa-university"></i> Bank Transfer
+                                </button>
+                            </div>
 
-                                <div id="qrCodeContainer"
-                                    style="display: none; margin-top: 20px; animation: slideDown 0.3s ease;">
+                            <!-- UPI Section Card -->
+                            <div id="tab-upi" class="tab-content active">
+                                <div
+                                    style="background: white; border-radius: 16px; padding: 25px; margin: 0 0 15px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); text-align: left; position: relative; overflow: hidden;">
                                     <div
-                                        style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: inline-block;">
-                                        <img src="advayapictures/scanner.jpeg" alt="Payment QR Code"
-                                            style="width: 100%; max-width: 250px; border-radius: 8px; display: block;">
+                                        style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary-main);">
+                                    </div>
+                                    <h4
+                                        style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 20px; font-weight: 800; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-mobile-alt"
+                                            style="color: var(--primary-main); background: rgba(107, 70, 193, 0.1); padding: 8px; border-radius: 8px;"></i>
+                                        UPI Details
+                                    </h4>
+
+                                    <div style="display: grid; gap: 15px;">
+                                        <div>
+                                            <span
+                                                style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Account
+                                                Name</span>
+                                            <div style="font-size: 1rem; color: var(--primary-dark); font-weight: 600;">
+                                                Advaya ECT</div>
+                                        </div>
+
+                                        <div>
+                                            <span
+                                                style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">UPI
+                                                ID</span>
+                                            <div
+                                                style="background: #f8fafc; padding: 12px 15px; border-radius: 8px; border: 1px dashed var(--primary-main); display: flex; justify-content: space-between; align-items: center;">
+                                                <strong
+                                                    style="font-size: 1.1rem; color: var(--primary-main); letter-spacing: 0.5px; user-select: all;">7411029259@okbixis</strong>
+                                                <i class="far fa-copy"
+                                                    style="color: var(--primary-main); cursor: pointer; font-size: 1.1rem;"
+                                                    onclick="navigator.clipboard.writeText('7411029259@okbixis'); alert('UPI ID Copied!');"
+                                                    title="Copy to clipboard"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- Bank Details Card -->
+                            <div id="tab-bank" class="tab-content">
+                                <div
+                                    style="background: white; border-radius: 16px; padding: 25px; margin: 0 0 25px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px rgba(0,0,0,0.02); text-align: left; position: relative; overflow: hidden;">
+                                    <div
+                                        style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent-orange);">
+                                    </div>
+                                    <h4
+                                        style="font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 20px; font-weight: 800; display: flex; align-items: center; gap: 10px;">
+                                        <i class="fas fa-university"
+                                            style="color: var(--accent-orange); background: rgba(246, 173, 85, 0.1); padding: 8px; border-radius: 8px;"></i>
+                                        Bank Transfer Details
+                                    </h4>
+
+                                    <div style="display: grid; gap: 15px;">
+                                        <div>
+                                            <span
+                                                style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Account
+                                                Name</span>
+                                            <div style="font-size: 1rem; color: var(--primary-dark); font-weight: 600;">
+                                                Advaya Educational and Charitable Trust</div>
+                                        </div>
+
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                            <div>
+                                                <span
+                                                    style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Account
+                                                    No</span>
+                                                <div
+                                                    style="font-size: 1.1rem; color: var(--primary-dark); font-weight: 700; font-family: monospace; letter-spacing: 1px;">
+                                                    39558858591</div>
+                                            </div>
+                                            <div>
+                                                <span
+                                                    style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">IFSC
+                                                    Code</span>
+                                                <div
+                                                    style="font-size: 1.1rem; color: var(--primary-dark); font-weight: 700; font-family: monospace; letter-spacing: 1px;">
+                                                    SBIN0041206</div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <span
+                                                style="display: block; font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Branch</span>
+                                            <div style="font-size: 1rem; color: var(--primary-dark); font-weight: 600;">
+                                                Subhash Nagar Bengaluru</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- UPI Specific Actions -->
+                            <div id="upi-actions">
+                                <!-- QR Code Toggle -->
+                                <div style="text-align: center; margin-bottom: 20px;">
+                                    <button type="button" onclick="toggleQRCode()" class="donate-submit-btn"
+                                        style="background: white; color: var(--primary-main); border: 2px solid var(--primary-main); width: 100%; box-shadow: none;">
+                                        <i class="fas fa-qrcode"></i> Show Payment QR Code
+                                    </button>
+
+                                    <div id="qrCodeContainer"
+                                        style="display: none; margin-top: 20px; animation: slideDown 0.3s ease;">
+                                        <div
+                                            style="background: white; padding: 15px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: inline-block;">
+                                            <img src="advayapictures/scanner.jpeg" alt="Payment QR Code"
+                                                style="width: 100%; max-width: 250px; border-radius: 8px; display: block;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bank Transfer Specific Actions -->
+                            <div id="bank-actions" style="display: none; margin-top: 30px; text-align: center;">
+                                <div
+                                    style="background: #ebf8ff; border: 1px solid #bee3f8; padding: 20px; border-radius: 12px; color: #2c5282;">
+                                    <i class="fas fa-info-circle"
+                                        style="font-size: 1.5rem; margin-bottom: 10px; display: block;"></i>
+                                    <p style="font-weight: 500; margin-bottom: 15px;">After completing the bank
+                                        transfer, please click on "Bank Transfer Completed".</p>
+                                    <p style="font-weight: 500; margin-bottom: 15px;">Our team will verify the
+                                        transaction and get back to you within 24 hours.</p>
+                                    <div
+                                        style="font-size: 0.9rem; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px; margin-top: 15px;">
+                                        For any support or assistance, please contact us at:<br>
+                                        <a href="tel:+919964720461"
+                                            style="color: var(--primary-main); font-weight: 700; font-size: 1.1rem; text-decoration: none;">+91
+                                            99647 20461</a> |
+                                        <a href="tel:+919964764529"
+                                            style="color: var(--primary-main); font-weight: 700; font-size: 1.1rem; text-decoration: none;">+91
+                                            99647 64529</a>
+                                    </div>
+                                </div>
+                                <button type="button" id="bank-confirm-btn" onclick="submitBankTransfer()"
+                                    class="donate-submit-btn"
+                                    style="background-color: #ed8936 !important; color: white !important; margin-top: 20px; display: inline-block;">
+                                    <i class="fas fa-check-circle"></i> Bank Transfer Completed
+                                </button>
+                            </div>
+
+                            <!-- Shared Transaction Form -->
                             <form action="https://sheetdb.io/api/v1/99zv92n75qknt" method="POST" id="sheetdb-form"
-                                style="margin-top: 30px;">
+                                style="margin-top: 40px; border-top: 1px dashed #e2e8f0; padding-top: 30px;">
                                 <!-- Hidden Fields -->
                                 <input type="hidden" id="hiddenName" name="name">
                                 <input type="hidden" id="hiddenEmail" name="email">
                                 <input type="hidden" id="hiddenPhone" name="phone">
                                 <input type="hidden" id="hiddenAmount" name="amount">
 
-                                <label class="input-label" style="text-align: left;">ENTER TRANSACTION ID</label>
+                                <label class="input-label" style="text-align: left;" id="txn-label">ENTER TRANSACTION
+                                    ID</label>
                                 <input type="text" id="finalTxnId" name="transaction_id" class="premium-input"
-                                    placeholder="UPI Transaction ID (e.g. 1234567890)" required>
+                                    placeholder="Enter Reference Number / ID" required>
 
                                 <button type="submit" class="donate-submit-btn"
                                     style="background: var(--primary-dark);">
@@ -615,6 +768,74 @@
     <script src="js/main.js"></script>
     <script>
 
+
+        function switchPaymentTab(tabName, element) {
+            // Buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');
+            }
+
+            // Content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            const contentTab = document.getElementById('tab-' + tabName);
+            if (contentTab) contentTab.classList.add('active');
+
+            // Toggle Actions
+            const form = document.getElementById('sheetdb-form');
+            const bankBtn = document.getElementById('bank-confirm-btn');
+            const upiActions = document.getElementById('upi-actions');
+            const bankActions = document.getElementById('bank-actions');
+
+            if (tabName === 'upi') {
+                if (upiActions) upiActions.style.display = 'block';
+                if (bankActions) bankActions.style.display = 'none';
+
+                // UPI: Show form
+                if (form) {
+                    form.style.display = 'block';
+                    const txnLabel = document.getElementById('txn-label');
+                    const txnInput = document.getElementById('finalTxnId');
+
+                    if (txnLabel) txnLabel.innerText = 'ENTER UPI TRANSACTION ID';
+                    if (txnInput) {
+                        txnInput.placeholder = 'UPI Transaction ID (e.g. 1234567890)';
+                        txnInput.value = '';
+                        txnInput.required = true;
+                    }
+                }
+            } else {
+                if (upiActions) upiActions.style.display = 'none';
+                if (bankActions) bankActions.style.display = 'block';
+
+                // Bank: Hide form, ensure button is visible
+                if (form) form.style.display = 'none';
+                if (bankBtn) {
+                    bankBtn.style.display = 'inline-block'; // Use inline-block or block to ensure visibility
+                    // bankBtn.style.visibility = 'visible'; // Ensure not hidden
+                }
+
+                const txnInput = document.getElementById('finalTxnId');
+                if (txnInput) txnInput.required = false;
+            }
+        }
+
+        function submitBankTransfer() {
+            const form = document.getElementById('sheetdb-form');
+            const btn = document.getElementById('bank-confirm-btn');
+
+            // Populate hidden fields just in case (though main logic should handle it)
+            // Ensure Txn ID is filled to pass validation/indicate type
+            document.getElementById('finalTxnId').value = 'BANK-TRANSFER-PENDING';
+
+            // Trigger Submit
+            // We use requestSubmit to trigger the event listener
+            if (form.requestSubmit) {
+                form.requestSubmit();
+            } else {
+                form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+            }
+        }
 
         function selectAmount(amount, element) {
             // Update active state
